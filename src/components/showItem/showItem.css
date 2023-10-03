@@ -1,0 +1,137 @@
+.show-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.76);
+    z-index: 9999;
+    overflow: auto;
+}
+
+.show-item-block {
+    width: 800px;
+    height: 1000px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.show-item-img {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 10px 50px 40px;
+    padding: 30px 20px;
+}
+
+.show-item-img img {
+    width: 30%;
+    margin: 15px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 
+    0 -12px 24px 1px rgba(0,0,0,0.14),
+    0 -12px 30px 1px rgba(0,0,0,0.12),
+    0 -12px 10px 1px rgba(0,0,0,0.2);
+    transition: transform 1000ms ease;
+    z-index: 50;
+}
+
+.show-item-img img:hover {
+    transform: scale(2);
+    z-index: 60;
+}
+
+.show-item-card {
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    flex: 2 300px;
+    max-width: 100%;
+    height: 500px;
+    flex-direction: column;
+}
+
+.show-item-content {
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.show-item-block-img {
+    display: flex;
+    justify-content: center;
+}
+
+.show-item-add-to-cart {
+    background: #00CC9C;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin-bottom: 10px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: transform 500ms ease;
+    box-shadow: 0 2px 6px #bfb8b8;
+}
+
+.show-item-add-to-cart:hover {
+    transform: scale(1.1);
+}
+
+.close-show-item {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    float: right;
+    z-index: 10;
+}
+
+@media screen and (max-width: 1024px) {
+    .show-item-block {
+    max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .show-item-block {
+        padding: 0;
+        height: 99%;
+    }
+
+    .show-item-block-img {
+        display: inline;
+        margin: 0;
+    }
+
+    .show-item-img {
+        margin: 0;
+        /* justify-content: center; */
+        overflow: auto;
+    }
+
+    .show-item-img img {
+        width: 50%;
+    }
+
+    .show-item-img img:hover {
+        transform: scale(1.2);
+    }
+
+    .show-item-card h5 {
+        font-size: 18px;
+    }
+
+    .show-item-card p {
+        font-size: 14px;
+    }
+}

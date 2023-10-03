@@ -1,0 +1,356 @@
+.carousel {
+    margin: 70px -12px 0 -12px;
+}
+
+.carousel-indicators {
+    z-index: -1;
+}
+
+.carousel-control-prev {
+    z-index: -50;
+}
+
+.carousel-control-next {
+    z-index: -50;
+}
+
+
+.info-block-app {
+    position:relative;
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 10px 10px 0px 0px;
+    margin: -120px 15px 0 15px;
+    padding: 75px 0 55px;
+    max-width: 100%;
+    box-shadow: 
+    0 -12px 24px 1px rgba(0,0,0,0.14),
+    0 -12px 30px 1px rgba(0,0,0,0.12),
+    0 -12px 10px 1px rgba(0,0,0,0.2);
+}
+
+.info-bg {
+    background-color: #fff;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.products-bg {
+    background-color: #f0f0f0;
+    max-width: 100%;
+}
+
+.products-bg-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1500px;
+    overflow-x: auto;
+}
+
+.products-item {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 15px 0 15px;
+    height: 700px;
+    margin: 20px 30px -20px 10px;
+}
+
+.products-card {
+    max-width: 31%;
+    max-height: 75%;
+    margin-left: 10px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    box-shadow: 
+    0 -12px 15px 5px rgba(0,0,0,0.12),
+    0 -12px 15px 5px rgba(0,0,0,0.12),
+    0 12px 15px 5px rgba(0,0,0,0.12);
+}
+
+.products-card-img {
+    max-width: 50%;
+    margin: 15px 0 15px 0;
+    transition: transform 500ms ease;
+}
+
+.products-card-img:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+.products-content {
+    margin: 25px 0 15px 0;
+}
+
+.products-content h5 {
+    padding-top: 15px;
+}
+
+.products-card-img img {
+    max-width: 100%;
+    margin-top: -35px;
+    border-radius: 10px;
+    box-shadow: 
+    0 -12px 24px 1px rgba(0,0,0,0.14),
+    0 -12px 30px 1px rgba(0,0,0,0.12),
+    0 -12px 10px 1px rgba(0,0,0,0.2);
+}
+
+.products-but {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background: linear-gradient(to bottom, #03e373 5%, #408c99 100%);
+	background-color: #03e373;
+	border-radius: 8px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 13px 32px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #3d768a;
+    margin-bottom: 50px;
+}
+.products-but:hover {
+	background: linear-gradient(to bottom, #408c99 5%, #03e373 100%);
+	background-color: #408c99;
+    color: #ffffff;
+}
+.products-but:active {
+	position: relative;
+	top: 1px;
+}
+
+.image {
+    max-width: 40%;
+}
+
+.info-text {
+    margin-left: 16.66666667%;
+    margin-right: 16.66666667%;
+    text-align: center;
+}
+
+.info-text h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #3C4858;
+    margin: 10px 0px 20px;
+}
+
+.info-text p {
+    font-family: 'Roboto', sans-serif;
+    color: #999999;
+    font-size: 19px;
+    margin: 10px 0px 15px;
+}
+
+.info-text-mini-block {
+    max-width: 100%;
+    padding-left: 25px;
+}
+
+.info-text-mini {
+    text-align: center;
+    padding: 70px 0px 30px;
+    margin: 0 auto;
+    max-width: 30%;
+}
+
+.info-text-mini h4 {
+    font-family: 'Oswald', sans-serif;
+    color: #3C4858;
+    margin: 30px 0px 15px;
+    font-size: 20px;
+}
+
+.info-text-mini p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 0px 15px;
+    color: #999999;
+}
+
+.team {
+    margin-top: 65px;
+    max-width: 1500px;
+}
+
+.team-title {
+    text-align: center;
+    min-width: 600px;
+    height: 200px;
+    padding-top: 20px;
+}
+
+.team-title h1 {
+    font-size: 41px;
+}
+.team-content {
+    display: flex;
+    flex: 2 600px;
+    max-width: 50%;
+    height: 250px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+.team-content-img-box {
+    max-width: 350px;
+    margin: 0 20px 0 10px;
+}
+
+.team-content-text {
+    max-width: 100%;
+}
+
+.team-content-img {
+    max-width: 300px;
+}
+
+.img {
+    max-width: 100%;
+    min-width: 60px;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: 
+    0 16px 38px -12px rgba(0,0,0,0.56), 
+    0 4px 25px 0 rgba(0,0,0,0.12), 
+    0 8px 10px -5px rgb(0,0,0,0.2);
+}
+
+.team-content-text {
+    padding: 20px;
+}
+
+
+@media screen and (max-width: 760px) {
+    .info-block-app {
+        margin: -80px 0 0 0;
+        padding-top: 20px;
+    }
+
+    .team-title {
+        min-width: 200px;
+    }
+
+    .info-text {
+        margin-left: 6.66666667%;
+        margin-right: 6.66666667%;
+    }
+
+    .info-text p {
+        font-size: 15px;
+    }
+
+    .info-text-mini p {
+        font-size: 13px;
+    }
+
+    .team-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .info-block-app {
+        margin-top: -60px;
+    }
+
+    .info-text {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .info-text h1 {
+        font-size: 28px;
+    }
+
+    .info-text-mini-block {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+
+    .info-text-mini {
+        max-width: 70%;
+    }
+
+    .info-text-mini img {
+        max-width: 40%;
+    }
+
+    .info-text-mini h4 {
+        font-size: 22px;
+    }
+
+    .info-text-mini p {
+        font-size: 16px;
+    }
+
+    .team-title {
+        height: 130px;
+    }
+
+    .team-title h1 {
+        font-size: 28px;
+    }
+
+    .team-title h5 {
+        font-size: 16px;
+    }
+
+    .products-bg-row {
+        max-height: 650px;
+        align-items: normal;
+    }
+
+    .products-item {
+        max-width: 320px;
+        margin: 5px;
+        height: 650px;
+    }
+
+    .products-card {
+        max-width: 80%;
+        margin-right: 30px;
+    }
+
+    .products-content h4 {
+        font-size: 17px;
+    }
+
+    .products-content p {
+        font-size: 14px;
+    }
+
+    .team-content-text h4 {
+        font-size: 18px;
+    }
+
+    .team-content-text h6 {
+        font-size: 14px;
+    }
+
+    .products-but {
+        bottom: 880px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .info-block-app {
+        margin-top: -30px;
+    }
+}

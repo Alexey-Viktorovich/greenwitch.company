@@ -1,0 +1,96 @@
+.fone-block {
+    max-width: 100%;
+    padding: 0;
+}
+
+.content {
+    max-width: 100%;
+    height: 500px;
+    margin-top: 70px;
+    background: url("http://greenwitch.company/wp-content/uploads/2023/03/a5-1.jpg");
+    filter: brightness(50%);
+    position: relative;
+    top: 0;
+    z-index: 0;
+}
+
+.content-text {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    z-index: 0;
+    position: fixed;
+    top: 200px;
+}
+
+.content-text h1{
+    font-size: 70px;
+    color: #fff;
+    filter: none;
+}
+
+@media screen  and (max-width: 1200px) {
+    .content-text {
+        margin-bottom: 260px;
+    }
+}
+
+@media screen  and (max-width: 1000px) {
+    .content-text {
+        margin-bottom: 235px;
+    }
+
+    .content-text h1{
+        font-size: 60px;
+    }
+}
+
+@media screen  and (max-width: 900px) {
+
+    .content-text h1{
+        font-size: 50px;
+    }
+}
+
+@media screen  and (max-width: 700px) {
+    .content-text {
+        margin-bottom: 160px;
+    }
+
+    .content-text h1{
+        font-size: 38px;
+    }
+}
+
+@media screen  and (max-width: 550px) {
+    .content-text {
+        margin-bottom: 120px;
+    }
+
+    .content-text h1{
+        font-size: 32px;
+    }
+}
+
+@media screen  and (max-width: 450px) {
+    .content-text {
+        margin-bottom: 95px;
+    }
+
+    .content-text h1{
+        font-size: 25px;
+    }
+}
+
+@media screen  and (max-width: 370px) {
+    .content-text {
+        margin-bottom: 75px;
+    }
+
+    .content-text h1{
+        font-size: 20px;
+    }
+}
