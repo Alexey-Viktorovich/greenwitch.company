@@ -65,7 +65,7 @@ export default function NavbarMenu(props) {
       <Navbar bg="light" fixed='top' className='padtop'>
         <Container fluid>
           <Nav>
-            <NavLink className='img-block' to="/">
+            <NavLink className='img-block' to="greenwitch.company/">
               <img
                 alt=""
                 src="./favicon.png"
@@ -76,13 +76,13 @@ export default function NavbarMenu(props) {
             </NavLink>
           </Nav>
           <Nav className='nav-classic'>
-            <NavLink to="/" className='nav-tab'>
+            <NavLink to="greenwitch.company/" className='nav-tab'>
                 <Nav style={button}>Головна</Nav>
             </NavLink>
-            <NavLink to="/about-us" className='nav-tab'>
+            <NavLink to="greenwitch.company/about-us" className='nav-tab'>
                 <Nav style={button}>Інфо</Nav>
             </NavLink>
-            <NavLink to="/catalog" className='nav-tab'>
+            <NavLink to="greenwitch.company/catalog" className='nav-tab'>
                 <Nav style={button}>Каталог</Nav>
             </NavLink>
             {/* <NavLink to="/ause" className='nav-tab ause'>
@@ -108,13 +108,13 @@ export default function NavbarMenu(props) {
         </Container>
         <div className={classNameBurger}>
           <div className='burger-col'>
-            <NavLink to="/" className='nav-tab'>
+            <NavLink to="greenwitch.company/" className='nav-tab'>
                 <Nav style={button}>Головна</Nav>
             </NavLink>
-            <NavLink to="/about-us" className='nav-tab'>
+            <NavLink to="greenwitch.company/about-us" className='nav-tab'>
                 <Nav style={button}>Інфо</Nav>
             </NavLink>
-            <NavLink to="/catalog" className='nav-tab'>
+            <NavLink to="greenwitch.company/catalog" className='nav-tab'>
                 <Nav style={button}>Каталог</Nav>
             </NavLink>
           </div>

@@ -111,9 +111,9 @@ export default class App extends Component {
                 <Router>
                     <NavbarMenu orders={this.state.orders} onDelete={this.deleteOrder} />
                         <Routes>
-                            <Route path="/" element={<HomePage key={this.state.items.id} items={this.state.items} />} />
-                            <Route path="/about-us" element={<About />} />
-                            <Route path="/catalog" element={<Catalog onShowItem={this.onShowItem} orders={this.state.orders} items={this.state.items} onAdd={this.addToOrder}/>} />
+                            <Route path="greenwitch.company/" element={<HomePage key={this.state.items.id} items={this.state.items} />} />
+                            <Route path="greenwitch.company/about-us" element={<About />} />
+                            <Route path="greenwitch.company/catalog" element={<Catalog onShowItem={this.onShowItem} orders={this.state.orders} items={this.state.items} onAdd={this.addToOrder}/>} />
                             <Route path="/basket" element={<Basket orders={this.state.orders} onAddZakaz={this.addZakaz} onDelete={this.deleteOrder} onAllDelete={this.deleteAllOrder} />} />
                         </Routes>
                         {this.state.showItem && <ShowItem onShowItem={this.onShowItem} item={this.state.fullItem}/>}

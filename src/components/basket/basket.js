@@ -40,7 +40,7 @@ export default function Basket(props) {
             props.orders.map(el => (
                 <Row key={el.id}>
                     <Col className='basket-order-item'>
-                        <Col><img src={"./img/" + el.img + ".jpg"} alt='' /></Col>
+                        <Col><img src={"./img/" + el.img + ".png"} alt='' /></Col>
                         <Col>{el.title}</Col>
                         <Col>{el.price} $</Col>
                         <Col><FaTrash className='delete-icon' key={el.id} onClick={() => props.onDelete(el.id)}/></Col>
@@ -177,7 +177,7 @@ export default function Basket(props) {
                         <h1><b>Дякуємо!</b></h1>
                         <h3><b>Ваше замовлення прийняте</b></h3>
                         <p>Менеджер зв'яжеться з вами найближчим часом</p>
-                        <NavLink to="/">
+                        <NavLink to="greenwitch.company/">
                             <Nav onClick={() => props.onAllDelete()} >Завершити</Nav>
                         </NavLink>
                     </Container>

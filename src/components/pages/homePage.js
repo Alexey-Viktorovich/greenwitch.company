@@ -91,7 +91,7 @@ export default class HomePage extends Component {
                                 {this.props.items.map(el => (
                                     <div className='products-card' key={el.uniqueId}>
                                         <div className='products-card-img'>
-                                            <img src={"./img/" + el.img + ".jpg"} alt='' />
+                                            <img src={"./img/" + el.img + ".png"} alt='' />
                                         </div>
                                         <div className='products-content'>
                                             <h4>{el.title}</h4>

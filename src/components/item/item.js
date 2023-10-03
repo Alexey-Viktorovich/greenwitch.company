@@ -12,7 +12,7 @@ export default function Item(props) {
                 <Col className='item-card'>
                     <Col className='item-block-img'>
                         <div className='item-img'>
-                            <img src={"./img/" + props.item.img + ".jpg"} alt='' onClick={() => props.onShowItem(props.item)} />
+                            <img src={"./img/" + props.item.img + ".png"} alt='' onClick={() => props.onShowItem(props.item)} />
                         </div>
                     </Col>
                     <Col>
