@@ -53,7 +53,7 @@ export default function Basket(props) {
     const showNothing = () => {
         return (
           <div className='nothing'>
-            <h3>Корзина пуста</h3>
+            <h3>Кошик пустий</h3>
           </div>
         )
       }
@@ -177,7 +177,7 @@ export default function Basket(props) {
                         <h1><b>Дякуємо!</b></h1>
                         <h3><b>Ваше замовлення прийняте</b></h3>
                         <p>Менеджер зв'яжеться з вами найближчим часом</p>
-                        <NavLink to="greenwitch.company/">
+                        <NavLink to="/">
                             <Nav onClick={() => props.onAllDelete()} >Завершити</Nav>
                         </NavLink>
                     </Container>

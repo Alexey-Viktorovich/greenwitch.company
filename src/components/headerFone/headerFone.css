@@ -23,7 +23,7 @@
     color: #fff;
     z-index: 0;
     position: fixed;
-    top: 200px;
+    top: 150px;
 }
 
 .content-text h1{
@@ -79,18 +79,10 @@
     .content-text {
         margin-bottom: 95px;
     }
-
-    .content-text h1{
-        font-size: 25px;
-    }
 }
 
 @media screen  and (max-width: 370px) {
     .content-text {
         margin-bottom: 75px;
-    }
-
-    .content-text h1{
-        font-size: 20px;
     }
 }

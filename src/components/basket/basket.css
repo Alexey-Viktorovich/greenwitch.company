@@ -82,7 +82,6 @@
     color: #00cc9c;
     float: right;
     position: relative;
-    top: -35px;
     cursor: pointer;
     transition: transform 500ms ease;
 }
@@ -98,7 +97,7 @@
     display: flex;
     flex-direction: column;
     max-width: 360px;
-    height: 500px;
+    height: 400px;
     box-shadow: 0 16px 38px -12px rgba(0,0,0,0.56), 0 4px 25px 0 rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.2)
 }
 .basket-form .sum {
@@ -208,11 +207,11 @@
 
 @media screen and (max-width: 700px) {
     .basket-block {
-        margin-top: -100px;
         max-width: 90%;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: -250px;
     }
 
     .basket-block1 {
@@ -231,11 +230,20 @@
     }
 
     .basket-form {
+        padding: 45px 15px;
         margin-top: 50px;
         margin-left: 0;
         align-items: center;
     }
 
+    .basket-shop-cart .basket-order-item .delete-icon {
+        top: -35px;
+        right: -20px;
+    }
+
+    .basket-shop-cart .basket-order-item {
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -244,11 +252,12 @@
     }
 
     .basket-form {
-        padding: 30px 15px;
         margin-left: 0;
     }
 
     .basket-form .sum {
         font-size: 22px;
     }
+
+
 }

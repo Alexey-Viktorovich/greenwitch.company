@@ -29,10 +29,12 @@ const showOrders = (props) => {
 const showNothing = () => {
   return (
     <div className='nothing'>
-      <h3>Корзина пуста</h3>
+      <h3>Кошик пустий</h3>
     </div>
   )
 }
+
+
 
 
 export default function NavbarMenu(props) {
@@ -60,12 +62,26 @@ export default function NavbarMenu(props) {
     margin: 3
   }
 
+  const showElemen = () => {
+    let cart = cartOpen
+    let menu = menuBurger
+  
+    if (cart && menu === true) {
+      setCartOpen(cartOpen = !cartOpen);
+      setMenuBurger(menuBurger = !menuBurger)
+    } else if (cart === true) {
+      setCartOpen(cartOpen = !cartOpen);
+    } else if (menu === true) {
+      setMenuBurger(menuBurger = !menuBurger)
+    }
+  }
+
   return (
     <>
       <Navbar bg="light" fixed='top' className='padtop'>
         <Container fluid>
           <Nav>
-            <NavLink className='img-block' to="greenwitch.company/">
+            <NavLink className='img-block' to="/">
               <img
                 alt=""
                 src="./favicon.png"
@@ -76,13 +92,13 @@ export default function NavbarMenu(props) {
             </NavLink>
           </Nav>
           <Nav className='nav-classic'>
-            <NavLink to="greenwitch.company/" className='nav-tab'>
+            <NavLink to="/" className='nav-tab'>
                 <Nav style={button}>Головна</Nav>
             </NavLink>
-            <NavLink to="greenwitch.company/about-us" className='nav-tab'>
+            <NavLink to="/about-us" className='nav-tab'>
                 <Nav style={button}>Інфо</Nav>
             </NavLink>
-            <NavLink to="greenwitch.company/catalog" className='nav-tab'>
+            <NavLink to="/catalog" className='nav-tab'>
                 <Nav style={button}>Каталог</Nav>
             </NavLink>
             {/* <NavLink to="/ause" className='nav-tab ause'>
@@ -107,14 +123,15 @@ export default function NavbarMenu(props) {
               )}
         </Container>
         <div className={classNameBurger}>
+        <div className='none' onClick={() => showElemen()}></div>
           <div className='burger-col'>
-            <NavLink to="greenwitch.company/" className='nav-tab'>
+            <NavLink to="/" className='nav-tab'>
                 <Nav style={button}>Головна</Nav>
             </NavLink>
-            <NavLink to="greenwitch.company/about-us" className='nav-tab'>
+            <NavLink to="/about-us" className='nav-tab'>
                 <Nav style={button}>Інфо</Nav>
             </NavLink>
-            <NavLink to="greenwitch.company/catalog" className='nav-tab'>
+            <NavLink to="/catalog" className='nav-tab'>
                 <Nav style={button}>Каталог</Nav>
             </NavLink>
           </div>

@@ -22,7 +22,7 @@ export default function Item(props) {
                         </div>
                     </Col>
                     <Col className='item-content d-flex'>
-                        <h5>{props.item.price}$</h5>  
+                        <h5>{props.item.price} $</h5>  
                         <div className='add-to-cart' onClick={() => props.onAdd(props.item)}>+</div>
                     </Col>
 

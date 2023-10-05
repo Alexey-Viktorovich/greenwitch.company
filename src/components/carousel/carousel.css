@@ -25,6 +25,7 @@
     background-color: #00cc9c;
     border-color: #00cc9c;
     margin: 0px 10px 0px 0px;
+    padding-top: 8px;
     width: 120px;
     height: 40px;
 }
@@ -53,16 +54,7 @@
     }
     
     .context p{
-        font-size: 17px;
-    }
-    
-    .buttons a {
-        background-color: #00cc9c;
-        border-color: #00cc9c;
-        margin: 0px 5px 0px 0px;
-        width: 110px;
-        height: 35px;
-        font-size: 15px;
+        font-size: 20px;
     }
 }
 
@@ -76,49 +68,17 @@
     }
     
     .context p{
-        font-size: 16px;
-    }
-    
-    .buttons a {
-        background-color: #00cc9c;
-        border-color: #00cc9c;
-        margin: 0px 5px 0px 0px;
-        width: 100px;
-        height: 35px;
-        font-size: 15px;
+        font-size: 18px;
     }
 }
 
 @media screen  and (max-width: 700px) {
     .context {
-        top: 120px;
+        top: 100px;
     }
 }
 
 @media screen  and (max-width: 500px) {
-    .context {
-        top: 100px;
-    }
-
-    .context h1{
-        font-size: 30px;
-    }
-    
-    .context p{
-        font-size: 12px;
-    }
-    
-    .buttons a {
-        background-color: #00cc9c;
-        border-color: #00cc9c;
-        margin: 0px 5px 0px 0px;
-        width: 70px;
-        height: 30px;
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width: 400px) {
     .context {
         top: 80px;
     }
@@ -128,15 +88,22 @@
     }
     
     .context p{
-        font-size: 12px;
+        font-size: 15px;
     }
     
     .buttons a {
-        background-color: #00cc9c;
-        border-color: #00cc9c;
-        margin: 0px 5px 0px 0px;
-        width: 70px;
+        padding-top: 2px;
+        width: 100px;
         height: 30px;
-        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .context {
+        top: 70px;
+    }
+
+    .context h1{
+        font-size: 30px;
     }
 }

@@ -32,7 +32,7 @@
 }
 
 .item-img img:hover {
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(1.4) translateY(-5px);
 }
 
 .item-card {
@@ -77,7 +77,11 @@
 
 @media screen and (max-width: 700px) {
     .item {
-        max-width: 60%;
+        max-width: 90%;
         margin-bottom: 80px;
+    }
+    
+    .item-img img:hover {
+        transform: scale(1.4) translateY(-5px);
     }
 }

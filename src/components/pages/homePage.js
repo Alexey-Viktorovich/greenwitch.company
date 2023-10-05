@@ -2,6 +2,8 @@ import { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
+import { NavLink } from "react-router-dom";
 
 import CarouselHome from '../carousel/carousel';
 
@@ -64,7 +66,7 @@ export default class HomePage extends Component {
     render() {
         return (
         <Container fluid>
-                <CarouselHome/>
+                <CarouselHome />
                 <div className='info-block-app'>
                     <Container className='info-bg'>
                             <Row>
@@ -101,10 +103,12 @@ export default class HomePage extends Component {
                                     </div>
                                 ))}
                             </Row>
-                            <a href='./catalog' className='products-but'>Каталог</a>
                         </Container>
                     </Container>
                     <Container className='team>'>
+                    <NavLink to="/catalog">
+                        <Nav className='products-but'>Каталог</Nav>
+                    </NavLink>
                         <Row className='team-title'>
                             <Col>
                                 <h1>Наша команда</h1>
