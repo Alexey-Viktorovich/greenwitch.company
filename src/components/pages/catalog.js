@@ -12,8 +12,6 @@ import '../page-css/catalog.css'
 
 export default class Catalog extends Component {
 
-
-
     render() {
         let classNames = 'show-order-button'
 

@@ -5,8 +5,6 @@ import './item.css'
 
 export default function Item(props) {
 
-
-
     return (
         <Container className='item'>
                 <Col className='item-card'>

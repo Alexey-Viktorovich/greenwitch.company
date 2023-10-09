@@ -92,12 +92,14 @@ export default class App extends Component {
                     descText10: '',
                     category: 'Led лампи',
                     price: '220.00',
-                    count: '1'
+                    count: 1
                 }
             ],
             showItem: false,
-            fullItem: {}
+            fullItem: {},
+            orderNumb: 0
         }
+
         this.addToOrder = this.addToOrder.bind(this)
         this.deleteOrder = this.deleteOrder.bind(this)
         this.onShowItem = this.onShowItem.bind(this)
@@ -105,11 +107,11 @@ export default class App extends Component {
         this.addZakaz = this.addZakaz.bind(this)
     }
 
-    render() {
+    render() {    
         return (
             <div className='app'>
                 <Router basename="/greenwitch.company/">
-                    <NavbarMenu orders={this.state.orders} onDelete={this.deleteOrder} />
+                    <NavbarMenu orders={this.state.orders} count={this.state.orderNumb} onDelete={this.deleteOrder} />
                         <Routes>
                             <Route path="/" element={<HomePage key={this.state.items.id} items={this.state.items} />} />
                             <Route path="/about-us" element={<About />} />
@@ -130,11 +132,12 @@ export default class App extends Component {
 
     deleteOrder(id) {
         this.setState({orders: this.state.orders.filter(el => el.id !== id)})
+        this.setState({orderNumb: this.state.orderNumb -1})
     }
 
     deleteAllOrder() {
         this.setState({orders: []})
-        console.log(this.state.orders);
+        this.setState({orderNumb: 0})
     }
 
     addToOrder(item) {
@@ -142,11 +145,14 @@ export default class App extends Component {
         this.state.orders.forEach(el => {
             if(el.id === item.id)
                 isInArray = true;
+            // this.setState({orders: [...this.state.orders.count ++]})
         })
+        if (isInArray === false) {
+            this.setState({orderNumb: this.state.orderNumb +1})
+        }
         if (!isInArray)
             this.setState({orders: [...this.state.orders, item]})
     }
-    
 
     addZakaz(ordersArr, lastName, email, mobile, sum) {
         const newItem = {

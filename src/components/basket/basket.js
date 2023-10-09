@@ -11,7 +11,7 @@ import HeaderFone from '../headerFone/headerFoneBasket';
 import './basket.css';
 
 export default function Basket(props) {
-
+ 
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [mobile, setMobile] = useState('')
@@ -24,6 +24,8 @@ export default function Basket(props) {
     const [formValid, setFormValid] = useState(false)
     let [loadClicks, setLoadClick] = useState(false)
     const [ordersArr, setZakazArr] = useState(props.orders.map(el => el.title))
+
+
 
     useEffect(() => {
         if (lastNameError || emailError || mobileError) {
@@ -43,6 +45,7 @@ export default function Basket(props) {
                         <Col><img src={"./img/" + el.img + ".png"} alt='' /></Col>
                         <Col>{el.title}</Col>
                         <Col>{el.price} $</Col>
+                        {/* <Col><button onClick={minus}>-</button>{el.count}<button onClick={plus}>+</button></Col> */}
                         <Col><FaTrash className='delete-icon' key={el.id} onClick={() => props.onDelete(el.id)}/></Col>
                     </Col>
                 </Row>
@@ -136,6 +139,14 @@ export default function Basket(props) {
         e.preventDefault();
         setLoadClick(loadClicks = !loadClicks)
     }
+
+    // const minus = () => {
+    //     setZakazArr(count -1)
+    // };
+
+    // const plus = () => {
+    //     setZakazArr(count +1)
+    // };
 
     console.log(ordersArr, loadClicks);
 

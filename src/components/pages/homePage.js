@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -62,11 +62,11 @@ export default class HomePage extends Component {
             ]
         }
     }
-    
+
     render() {
         return (
         <Container fluid>
-                <CarouselHome />
+                <CarouselHome ref={this.myRef} />
                 <div className='info-block-app'>
                     <Container className='info-bg'>
                             <Row>
@@ -79,7 +79,7 @@ export default class HomePage extends Component {
                             </Row>
                             <Row className='info-text-mini-block'>
                                 {this.state.contentMini.map(el => (
-                                    <Col className='info-text-mini' key={el.uniqueId}>
+                                    <Col className='info-text-mini' key={el.id}>
                                         <img src={el.img} loading="lazy" alt='' className='image' />
                                         <h4>{el.titleh4}</h4>
                                         <p>{el.text}</p>
@@ -91,7 +91,7 @@ export default class HomePage extends Component {
                         <Container className='products-bg-row'>
                             <Row className='products-item'>
                                 {this.props.items.map(el => (
-                                    <div className='products-card' key={el.uniqueId}>
+                                    <div className='products-card' key={el.id}>
                                         <div className='products-card-img'>
                                             <img src={"./img/" + el.img + ".png"} alt='' />
                                         </div>
@@ -117,7 +117,7 @@ export default class HomePage extends Component {
                         </Row>
                         <Row>
                             {this.state.teamContent.map(el => (
-                                <Col className='team-content' key={el.uniqueId}>
+                                <Col className='team-content' key={el.id}>
                                     <Col className='team-content-img-box'>
                                         <div className='team-content-img'>
                                             <img className='img' src={el.img} alt='' />

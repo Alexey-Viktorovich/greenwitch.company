@@ -8,58 +8,38 @@ import './navb.css';
 import { useState } from 'react';
 import Order from '../order/order';
 
-const showOrders = (props) => {
-  let sum = 0
-  props.orders.forEach(el => sum += Number.parseFloat(el.price))
-  return (
-    <>
-      {props.orders.map(el => (
-        <Order onDelete={props.onDelete} key={el.id} item={el}/>
-      ))}
-      <div className='sum'>
-        <b>Разом: {new Intl.NumberFormat().format(sum)} $</b>
-        <NavLink to="/basket">
-            <Nav className='show-order-button'>Переглянути</Nav>
-        </NavLink>
-      </div>
-    </>
-  )
-} 
-
-const showNothing = () => {
-  return (
-    <div className='nothing'>
-      <h3>Кошик пустий</h3>
-    </div>
-  )
-}
-
-
-
 
 export default function NavbarMenu(props) {
   let [cartOpen, setCartOpen] = useState(false)
   let [menuBurger, setMenuBurger] = useState(false)
   const {orders} = props;
+  const {count} = props;
 
-  let className = 'shop-cart-button'
-  if (orders.length > 0) {
-    className += '-activ'
-  }
+  const showOrders = (props) => {
+    let sum = 0
+    props.orders.forEach(el => sum += Number.parseFloat(el.price))
 
-  let classNameBurger = 'menu-burger'
-  if (menuBurger === true) {
-    classNameBurger += ' active'
-  }
-
-  let classNameMenuBat = 'menu-btn'
-  if (menuBurger === true) {
-    classNameMenuBat += ' active'
-  }
-
-  const button = {
-    padding: 3,
-    margin: 3
+    return (
+      <>
+        {props.orders.map(el => (
+          <Order onDelete={props.onDelete} key={el.id} item={el}/>
+        ))}
+        <div className='sum'>
+          <b>Разом: {new Intl.NumberFormat().format(sum)} $</b>
+          <NavLink to="/basket">
+              <Nav className='show-order-button' onClick={() => setCartOpen(cartOpen = false)}>Переглянути</Nav>
+          </NavLink>
+        </div>
+      </>
+    )
+  } 
+  
+  const showNothing = () => {
+    return (
+      <div className='nothing'>
+        <h3>Кошик пустий</h3>
+      </div>
+    )
   }
 
   const showElemen = () => {
@@ -74,6 +54,31 @@ export default function NavbarMenu(props) {
     } else if (menu === true) {
       setMenuBurger(menuBurger = !menuBurger)
     }
+  }
+  
+  let className = 'shop-cart-button'
+  if (orders.length > 0) {
+    className += '-activ'
+  }
+
+  let classNameCount = 'count'
+  if (count > 0) {
+    classNameCount += '-activ'
+  }
+  
+  let classNameBurger = 'menu-burger'
+  if (menuBurger === true) {
+    classNameBurger += ' active'
+  }
+
+  let classNameMenuBat = 'menu-btn'
+  if (menuBurger === true) {
+    classNameMenuBat += ' active'
+  }
+
+  const button = {
+    padding: 3,
+    margin: 3
   }
 
   return (
@@ -108,19 +113,22 @@ export default function NavbarMenu(props) {
           <div className={classNameMenuBat} onClick={() => setMenuBurger(menuBurger = !menuBurger)}>
             <span></span>
           </div>
-          <FaBasketShopping
-              onClick={() => setCartOpen(cartOpen = !cartOpen)}
-              className={className} />
-              {cartOpen && (
-                <>
-                  <div className='none' onClick={() => setCartOpen(cartOpen = false)}></div>
-                  <div className='shop-cart'>
-                    {props.orders.length > 0 ?
-                        showOrders(props) : showNothing()}
-                  </div>
+          <div>
+            <FaBasketShopping
+                onClick={() => setCartOpen(cartOpen = !cartOpen)}
+                className={className} />
+                {cartOpen && (
+                  <>
+                    <div className='none' onClick={() => setCartOpen(cartOpen = false)}></div>
+                    <div className='shop-cart'>
+                      {props.orders.length > 0 ?
+                          showOrders(props) : showNothing()}
+                    </div>
 
-                </>
-              )}
+                  </>
+                )}
+            <span className={classNameCount} onClick={() => setCartOpen(cartOpen = !cartOpen)}>{count}</span>
+          </div>
         </Container>
         <div className={classNameBurger}>
         <div className='none' onClick={() => showElemen()}></div>
