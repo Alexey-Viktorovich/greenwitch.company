@@ -7,7 +7,7 @@ import About from '../pages/about';
 import Catalog from '../pages/catalog';
 import Footer from '../footer/footer';
 import ShowItem from '../showItem/showItem';
-import Basket from '../basket/basket';
+import Basket from '../pages/basket';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -107,7 +107,7 @@ export default class App extends Component {
         this.addZakaz = this.addZakaz.bind(this)
     }
 
-    render() {    
+    render() {   
         return (
             <div className='app'>
                 <Router basename="/greenwitch.company/">
@@ -118,7 +118,7 @@ export default class App extends Component {
                             <Route path="/catalog" element={<Catalog onShowItem={this.onShowItem} orders={this.state.orders} items={this.state.items} onAdd={this.addToOrder}/>} />
                             <Route path="/basket" element={<Basket orders={this.state.orders} onAddZakaz={this.addZakaz} onDelete={this.deleteOrder} onAllDelete={this.deleteAllOrder} />} />
                         </Routes>
-                        {this.state.showItem && <ShowItem onShowItem={this.onShowItem} item={this.state.fullItem}/>}
+                        {this.state.showItem && <ShowItem onShowItem={this.onShowItem} onAdd={this.addToOrder} item={this.state.fullItem}/>}
                     <Footer />
                 </Router>
             </div>
@@ -145,13 +145,19 @@ export default class App extends Component {
         this.state.orders.forEach(el => {
             if(el.id === item.id)
                 isInArray = true;
-            // this.setState({orders: [...this.state.orders.count ++]})
+            this.onDuble();
         })
+        if (!isInArray)
+            this.setState({orders: [...this.state.orders, item]})
         if (isInArray === false) {
             this.setState({orderNumb: this.state.orderNumb +1})
         }
-        if (!isInArray)
-            this.setState({orders: [...this.state.orders, item]})
+    }
+
+    onDuble() {
+        this.setState((state) => {
+            return (state.orders.count = state.orders.count +1)
+        })
     }
 
     addZakaz(ordersArr, lastName, email, mobile, sum) {

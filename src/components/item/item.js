@@ -4,13 +4,12 @@ import Col from 'react-bootstrap/Col';
 import './item.css'
 
 export default function Item(props) {
-
     return (
         <Container className='item'>
-                <Col className='item-card'>
+                <Col className='item-card' onClick={() => props.onShowItem(props.item)}>
                     <Col className='item-block-img'>
                         <div className='item-img'>
-                            <img src={"./img/" + props.item.img + ".png"} alt='' onClick={() => props.onShowItem(props.item)} />
+                            <img src={"./img/" + props.item.img + ".png"} alt='' />
                         </div>
                     </Col>
                     <Col>
@@ -19,11 +18,12 @@ export default function Item(props) {
                             <p className='text-muted'>{props.item.titledesc}</p>
                         </div>
                     </Col>
+                </Col>
+                <Col>
                     <Col className='item-content d-flex'>
-                        <h5>{props.item.price} $</h5>  
+                        <h5><b>{props.item.price}</b> $</h5>  
                         <div className='add-to-cart' onClick={() => props.onAdd(props.item)}>+</div>
                     </Col>
-
                 </Col>
         </Container>
     )

@@ -6,17 +6,19 @@
     flex-direction: column;
     flex-wrap: wrap;
     border-radius: 5px;
-    box-shadow: 
-    0 -12px 24px 1px rgba(0,0,0,0.14),
-    0 -12px 30px 1px rgba(0,0,0,0.12),
-    0 -12px 10px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
     margin-bottom: 70px;
+    cursor: pointer;
+    transition: transform 200ms ease;
+}
+
+.item:hover {
+    transform:  scale(1.02) translateY(-5px);
 }
 
 .item-img {
     width: 60%;
     margin-bottom: 50px;
-    cursor: pointer;
 }
 
 .item-img img {
@@ -25,14 +27,7 @@
     border-radius: 10px;
     transition: transform 500ms ease;
     background: #fff;
-    box-shadow: 
-    0 -12px 24px 1px rgba(0,0,0,0.14),
-    0 -12px 30px 1px rgba(0,0,0,0.12),
-    0 -12px 10px 1px rgba(0,0,0,0.2);
-}
-
-.item-img img:hover {
-    transform: scale(1.4) translateY(-5px);
+    box-shadow: 0 0 2px rgba(0,0,0,1);
 }
 
 .item-card {

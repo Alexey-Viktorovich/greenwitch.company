@@ -147,7 +147,6 @@ export default function NavbarMenu(props) {
             {/* <NavLink to="/ause" className='nav-tab'>
                 <Nav style={button}>Авторизація</Nav>
             </NavLink> */}
-
           </div>
         </div>
       </Navbar>

@@ -64,6 +64,21 @@ export default class HomePage extends Component {
     }
 
     render() {
+        function onEntry(entry) {
+            entry.forEach(change => {
+              if (change.isIntersecting) {
+                change.target.classList.add('-show');
+              }
+            });
+          }
+
+        let options = { threshold: [0.5] };
+        let observer = new IntersectionObserver(onEntry, options);
+        let elements = document.querySelectorAll('.info-text-mini');
+        for (let elm of elements) {
+        observer.observe(elm);
+        }
+        
         return (
         <Container fluid>
                 <CarouselHome ref={this.myRef} />
@@ -98,7 +113,7 @@ export default class HomePage extends Component {
                                         <div className='products-content'>
                                             <h4>{el.title}</h4>
                                             <p className='text-muted'>{el.titledesc}</p>
-                                            <h5>{el.price}$</h5>  
+                                            <h5><b>{el.price}</b> $</h5>  
                                         </div>
                                     </div>
                                 ))}

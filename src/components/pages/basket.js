@@ -8,10 +8,9 @@ import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom";
 
 import HeaderFone from '../headerFone/headerFoneBasket';
-import './basket.css';
+import '../page-css/basket.css';
 
 export default function Basket(props) {
- 
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [mobile, setMobile] = useState('')
@@ -59,7 +58,7 @@ export default function Basket(props) {
             <h3>Кошик пустий</h3>
           </div>
         )
-      }
+    }
 
     const blurHandler = (e) => {
         switch (e.target.name) {
@@ -147,8 +146,6 @@ export default function Basket(props) {
     // const plus = () => {
     //     setZakazArr(count +1)
     // };
-
-    console.log(ordersArr, loadClicks);
 
     return (
         <Container className='basket-page-block' fluid>

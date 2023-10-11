@@ -10,12 +10,10 @@ import Item from '../item/item';
 import HeaderFone from '../headerFone/headerFoneCatalog';
 import '../page-css/catalog.css'
 
-export default class Catalog extends Component {
+export default function Catalog(props) {
 
-    render() {
         let classNames = 'show-order-button'
-
-        if (this.props.orders.length < 1) {
+        if (props.orders.length < 1) {
             classNames += '-none'
         }
 
@@ -26,8 +24,8 @@ export default class Catalog extends Component {
                     <Container className='catalog'>
                         <Row className='catalog-item'>
                             <Row className='catalog-item'>
-                                {this.props.items.map(el => (
-                                        <Item onShowItem={this.props.onShowItem} orders={this.props.orders} key={el.id} item={el} onAdd={this.props.onAdd}/>
+                                {props.items.map(el => (
+                                        <Item onShowItem={props.onShowItem} orders={props.orders} key={el.id} item={el} onAdd={props.onAdd}/>
                                     ))}
                             </Row>
                             <Col>
@@ -40,5 +38,4 @@ export default class Catalog extends Component {
                 </div>
             </Container>
         )
-    }
 }

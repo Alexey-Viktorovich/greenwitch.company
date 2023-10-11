@@ -1,4 +1,4 @@
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
 
 import './footer.css';
 import inst from './img/Ins.png'
@@ -34,8 +34,6 @@ export default function Footer() {
                     </div>
                 </Container>
             </div>
-        
         </footer>
     )
-    
 }
