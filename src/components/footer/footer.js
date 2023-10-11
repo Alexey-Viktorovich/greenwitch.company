@@ -16,16 +16,16 @@ export default function Footer() {
                     <div className='footer-content-bottom d-flex'>
                         <div className='d-flex'>
                         <ul className='footer-buton'>
-                            <a href='https://www.facebook.com/Greenwitch-112318907206992/'><img src={face} alt='' className='footer-img'/></a>
+                            <a href='https://www.facebook.com/Greenwitch-112318907206992/'><img src={face} alt='' loading="lazy" className='footer-img'/></a>
                         </ul>
                         <ul className='footer-buton'>
-                            <a href='https://www.instagram.com/green_witch_products/'><img src={inst} alt='' className='footer-img'/></a>
+                            <a href='https://www.instagram.com/green_witch_products/'><img src={inst} alt='' loading="lazy" className='footer-img'/></a>
                         </ul>
                         <ul className='footer-buton'>
-                            <a href='https://t.me/greenwitch_app'><img src={telega} alt='' className='footer-img'/></a>
+                            <a href='https://t.me/greenwitch_app'><img src={telega} alt='' loading="lazy" className='footer-img'/></a>
                         </ul>
                         <ul className='footer-buton'>
-                            <a href='mailto:greenwitchcompanyltd@gmail.com/'><img src={email} alt='' className='footer-img'/></a>
+                            <a href='mailto:greenwitchcompanyltd@gmail.com/'><img src={email} loading="lazy" alt='' className='footer-img'/></a>
                         </ul>
                         </div>
 

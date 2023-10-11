@@ -12,9 +12,9 @@ export default function ShowItem(props) {
                 <Container className='show-item-card'>
                     <Container className='show-item-block-img'>
                         <div className='show-item-img'>
-                            <img src={"./img/" + props.item.img + ".jpg"} alt='' />
-                            <img src={"./img/" + props.item.img1 + ".jpg"} alt='' />
-                            <img src={"./img/" + props.item.img2 + ".jpg"} alt='' />
+                            <img src={"./img/" + props.item.img + ".png"} alt='' />
+                            <img src={"./img/" + props.item.img1 + ".png"} alt='' />
+                            <img src={"./img/" + props.item.img2 + ".png"} alt='' />
                         </div>
                         <RiCloseCircleFill className="close-show-item" onClick={() => props.onShowItem(props.item)}/>
                     </Container>
