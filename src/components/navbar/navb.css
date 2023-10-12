@@ -405,6 +405,10 @@
         font-size: 14px;
     }
 
+    .shop-cart .order-item {
+        padding-bottom: 10px;
+    }
+
     .shop-cart.sum {
         font-size: 14px;
     }

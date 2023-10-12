@@ -72,11 +72,11 @@
 
 @media screen and (max-width: 700px) {
     .item {
-        max-width: 90%;
+        max-width: 80%;
         margin-bottom: 80px;
     }
     
-    .item-img img:hover {
-        transform: scale(1.4) translateY(-5px);
+    .item-card {
+        max-height: 550px;
     }
 }
