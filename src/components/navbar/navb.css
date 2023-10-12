@@ -291,12 +291,12 @@
     
     .menu-btn.active::before {
         top: 50%;
-        transform: rotate(-45deg) translate(0, -50%);
+        transform: rotate(-45deg) translate(0);
     }
     
     .menu-btn.active::after {
         top: 50%;
-        transform: rotate(45deg) translate(0, 50%);
+        transform: rotate(45deg) translate(0);
     }
 
     .menu-burger.active{

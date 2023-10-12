@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useInView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

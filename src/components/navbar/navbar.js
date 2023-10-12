@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -5,13 +6,13 @@ import { NavLink } from "react-router-dom";
 import { FaBasketShopping } from "react-icons/fa6"
 
 import './navb.css';
-import { useState } from 'react';
 import Order from '../order/order';
 
 
 export default function NavbarMenu(props) {
   let [cartOpen, setCartOpen] = useState(false)
   let [menuBurger, setMenuBurger] = useState(false)
+
   const {orders} = props;
   const {count} = props;
 
@@ -47,11 +48,15 @@ export default function NavbarMenu(props) {
     let menu = menuBurger
   
     if (cart && menu === true) {
-      setCartOpen(cartOpen = !cartOpen);
+      setCartOpen(cartOpen = !cartOpen)
       setMenuBurger(menuBurger = !menuBurger)
     } else if (cart === true) {
-      setCartOpen(cartOpen = !cartOpen);
+      setCartOpen(cartOpen = !cartOpen)
     } else if (menu === true) {
+      setMenuBurger(menuBurger = !menuBurger)
+    } else if (cart === true && menu === false) {
+      setCartOpen(cartOpen = !cartOpen)
+    } else if (menu === false) {
       setMenuBurger(menuBurger = !menuBurger)
     }
   }
@@ -110,7 +115,7 @@ export default function NavbarMenu(props) {
                 <Nav style={button}>Авторизація</Nav>
             </NavLink> */}
           </Nav>
-          <div className={classNameMenuBat} onClick={() => setMenuBurger(menuBurger = !menuBurger)}>
+          <div className={classNameMenuBat} onClick={() => showElemen()}>
             <span></span>
           </div>
           <div>
