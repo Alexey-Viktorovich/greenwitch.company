@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/greenwitch.company/static/css/main.42890f0a.css",
-    "main.js": "/greenwitch.company/static/js/main.4258142b.js",
+    "main.js": "/greenwitch.company/static/js/main.4cf532c6.js",
     "static/media/Ins.png": "/greenwitch.company/static/media/Ins.fa767dc54bb713857609.png",
     "static/media/email.png": "/greenwitch.company/static/media/email.37224b40352781433bf3.png",
     "static/media/telegram.png": "/greenwitch.company/static/media/telegram.e17d1f1d71b65619899b.png",
     "index.html": "/greenwitch.company/index.html",
     "main.42890f0a.css.map": "/greenwitch.company/static/css/main.42890f0a.css.map",
-    "main.4258142b.js.map": "/greenwitch.company/static/js/main.4258142b.js.map"
+    "main.4cf532c6.js.map": "/greenwitch.company/static/js/main.4cf532c6.js.map"
   },
   "entrypoints": [
     "static/css/main.42890f0a.css",
-    "static/js/main.4258142b.js"
+    "static/js/main.4cf532c6.js"
   ]
 }
