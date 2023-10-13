@@ -19,7 +19,7 @@ export default function Footer() {
                             <a href='https://www.facebook.com/Greenwitch-112318907206992/'><img src={face} alt='' loading="lazy" className='footer-img'/></a>
                         </ul>
                         <ul className='footer-buton'>
-                            <a href='https://www.instagram.com/green_witch_products/'><img src={inst} alt='' loading="lazy" className='footer-img'/></a>
+                            <a href='https://www.instagram.com/greenwitch_company/'><img src={inst} alt='' loading="lazy" className='footer-img'/></a>
                         </ul>
                         <ul className='footer-buton'>
                             <a href='https://t.me/greenwitch_app'><img src={telega} alt='' loading="lazy" className='footer-img'/></a>

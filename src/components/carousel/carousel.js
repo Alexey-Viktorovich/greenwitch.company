@@ -1,4 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
+import Nav from 'react-bootstrap/Nav';
+import { NavLink } from "react-router-dom";
 
 import './carousel.css';
 
@@ -37,9 +39,9 @@ export default function CarouselHome() {
             <h1>Greenwitch</h1>
             <p>Купуй додаткову продукцію та розширюй свої можливості керування</p>
             <div className='d-flex buttons'>
-                <a href="/shop/"
-                  title=""
-                  className='btn btn-primary'>Замовити</a>
+              <NavLink className='btn btn-primary' to="/catalog">
+                <Nav>Замовити</Nav>
+              </NavLink>
             </div>
           </div>
         </Carousel.Caption>
@@ -55,7 +57,7 @@ export default function CarouselHome() {
             <h1>Greenwitch</h1>
             <p>Піднімай свій досвід вирощування на новий рівень</p>
             <div className='d-flex buttons'>
-                <a href="https://t.me/greenwitch_app"
+                <a href="https://t.me/greenwitch_company"
                   title=""
                   className='btn btn-primary'>Telegram</a>
             </div>
@@ -91,9 +93,9 @@ export default function CarouselHome() {
             <h1>Greenwitch</h1>
             <p>Купуй нашу круту лампу та отримуй в 2 рази більше врожаю</p>
             <div className='d-flex buttons'>
-                <a href="/shop/"
-                  title=""
-                  className='btn btn-primary'>Замовити</a>
+              <NavLink className='btn btn-primary' to="/catalog">
+                <Nav>Замовити</Nav>
+              </NavLink>
             </div>
           </div>
         </Carousel.Caption>

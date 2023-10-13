@@ -40,6 +40,31 @@
     transition: 0.3s;
 }
 
+.buttons.btn.btn-primary {
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    background-color: #00cc9c;
+    border-color: #00cc9c;
+    margin: 0px 10px 0px 0px;
+    padding-top: 8px;
+    width: 120px;
+    height: 40px;
+}
+
+.buttons.btn.btn-primary:hover {
+    background-color: #00cc9c;
+    border-color: #00cc9c;
+    box-shadow:
+    5px -5px 24px -2px rgba(0,0,0,0.14),
+    5px -5px 30px -2px rgba(0,0,0,0.12),
+    5px -5px 10px -2px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.buttons .nav {
+    justify-content: center;
+}
+
 .fon {
     filter: brightness(45%);
 }
