@@ -12,9 +12,15 @@ import Order from '../order/order';
 export default function NavbarMenu(props) {
   let [cartOpen, setCartOpen] = useState(false)
   let [menuBurger, setMenuBurger] = useState(false)
+  // let [auseCount, setAuseCount] = useState(0)   //для зміни стану лічильника, щоб з'явилась прихована кнопка авторизації. Треба на кнопці змінити класнейм та повісити обробник подій на якийсь елемент
 
   const {orders} = props;
   const {count} = props;
+
+  //для зміни стану лічильника, щоб з'явилась прихована кнопка авторизації. Треба на кнопці змінити класнейм та повісити обробник подій на якийсь елемент
+  // const clickCountAuse = () => {
+  //   setAuseCount(auseCount +1)
+  // }
 
   const showOrders = (props) => {
     let sum = 0
@@ -81,10 +87,17 @@ export default function NavbarMenu(props) {
     classNameMenuBat += ' active'
   }
 
+  //для зміни стану лічильника, щоб з'явилась прихована кнопка авторизації. Треба на кнопці змінити класнейм та повісити обробник подій на якийсь елемент
+  // let classNameAuse = 'ause'
+  // if (auseCount > 5) {
+  //   classNameAuse += '-activ'
+  // }
+
   const button = {
     padding: 3,
     margin: 3
   }
+
 
   return (
     <>
@@ -138,21 +151,21 @@ export default function NavbarMenu(props) {
         <div className={classNameBurger}>
         <div className='none' onClick={() => showElemen()}></div>
           <div className='burger-col'>
-            <NavLink to="/" className='nav-tab'>
+            <NavLink onClick={() => showElemen()} to="/" className='nav-tab'>
                 <Nav style={button}>Головна</Nav>
             </NavLink>
-            <NavLink to="/about-us" className='nav-tab'>
+            <NavLink onClick={() => showElemen()} to="/about-us" className='nav-tab'>
                 <Nav style={button}>Інфо</Nav>
             </NavLink>
-            <NavLink to="/catalog" className='nav-tab'>
+            <NavLink onClick={() => showElemen()} to="/catalog" className='nav-tab'>
                 <Nav style={button}>Каталог</Nav>
             </NavLink>
           </div>
-          <div className='burger-col2'>
-            {/* <NavLink to="/ause" className='nav-tab'>
+          {/* <div className='burger-col2'>
+            <NavLink to="/ause" className='nav-tab ause'>
                 <Nav style={button}>Авторизація</Nav>
-            </NavLink> */}
-          </div>
+            </NavLink>
+          </div> */}
         </div>
       </Navbar>
     </>

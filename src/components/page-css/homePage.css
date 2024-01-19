@@ -229,6 +229,7 @@
 
 .team-content-text {
     max-width: 100%;
+    padding: 20px;
 }
 
 .team-content-img {
@@ -246,11 +247,6 @@
     0 4px 25px 0 rgba(0,0,0,0.12), 
     0 8px 10px -5px rgb(0,0,0,0.2);
 }
-
-.team-content-text {
-    padding: 20px;
-}
-
 
 @media screen and (max-width: 760px) {
     .info-block-app {
@@ -294,7 +290,7 @@
 
 @media screen and (max-width: 700px) {
     .info-block-app {
-        margin-top: -60px;
+        margin-top: -30px;
     }
     .info-text-block {
         margin-bottom: 0;
@@ -441,11 +437,5 @@
 @media screen and (max-width: 550px) {
     .products-card-img:hover {
         transform: scale(1.5) translateY(-5px);
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .info-block-app {
-        margin-top: -30px;
     }
 }

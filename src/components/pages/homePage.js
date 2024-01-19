@@ -117,7 +117,7 @@ export default function HomePage(props) {
                     </Row>
                     <Row>
                         {teamContent.map(el => (
-                            <Col className='team-content' key={el.id}>
+                            <Col className={`team-content${inView ? '-show' : ''}`} key={el.id}>
                                 <Col className='team-content-img-box'>
                                     <div className='team-content-img'>
                                         <img className='img' src={el.img} alt='' loading="lazy" />
