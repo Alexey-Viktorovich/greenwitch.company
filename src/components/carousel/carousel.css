@@ -2,13 +2,11 @@
     max-width: 90%;
     right: 5%;
     left: 5%;
-    top: 320px;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     color: #fff;
     text-align: left;
-    position: fixed;
-    margin-bottom: 245px;
+    margin-bottom: 350px;
 }
 
 .context h1{
@@ -71,7 +69,7 @@
 
 @media screen  and (max-width: 1240px) {
     .context {
-        top: 220px
+        margin: -400px 0 0 -30px;
     }
 
     .context h1{
@@ -85,7 +83,7 @@
 
 @media screen  and (max-width: 900px) {
     .context {
-        top: 160px;
+        margin: -350px 0 0 -30px;
     }
 
     .context h1{
@@ -98,22 +96,22 @@
 }
 
 @media screen  and (max-width: 700px) {
+    .carousel-caption {
+        width: 550px;
+    }
+    
     .context {
-        top: 100px;
+        margin: -250px 0 0 -30px;
     }
 }
 
 @media screen  and (max-width: 500px) {
-    .context {
-        top: 80px;
-    }
-
-    .context h1{
-        font-size: 30px;
+    .carousel-caption {
+        width: 450px;
     }
     
-    .context p{
-        font-size: 15px;
+    .context {
+        margin: -150px 0 0 -30px;
     }
     
     .buttons a {
@@ -123,12 +121,16 @@
     }
 }
 
-@media screen and (max-width: 400px) {
-    .context {
-        top: 70px;
+@media screen and (max-width: 450px) {
+    .carousel-caption {
+        width: 350px;
     }
 
     .context h1{
         font-size: 30px;
+    }
+
+    .context p{
+        font-size: 15px;
     }
 }

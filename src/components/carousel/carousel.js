@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import './carousel.css';
 
 export default function CarouselHome() {
+
   return (
     <Carousel fade>
       <Carousel.Item>

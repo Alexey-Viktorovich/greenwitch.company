@@ -2,16 +2,10 @@
     position: relative;
     z-index: 100;
     background: #323437;
-    margin: 0 27px;
     max-width: 100%;
     height: max-content;
 }
 
-@media screen and (max-width: 800px) {
-    .footer-block {
-        margin: 0;
-    }
-}
 .footer-content {
     min-height: 100px;
 }

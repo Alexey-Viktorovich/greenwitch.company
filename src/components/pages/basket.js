@@ -36,6 +36,7 @@ export default function Basket(props) {
         } 
     }, [lastNameError, emailError, mobileError, props.orders.length])
 
+
     const orders = () => {
         return (
             props.orders.map(el => (
@@ -44,7 +45,6 @@ export default function Basket(props) {
                         <Col><img src={"./img/" + el.img + ".png"} alt='' /></Col>
                         <Col>{el.title}</Col>
                         <Col>{el.price} $</Col>
-                        {/* <Col><button onClick={minus}>-</button>{el.count}<button onClick={plus}>+</button></Col> */}
                         <Col><FaTrash className='delete-icon' key={el.id} onClick={() => props.onDelete(el.id)}/></Col>
                     </Col>
                 </Row>
@@ -138,14 +138,6 @@ export default function Basket(props) {
         e.preventDefault();
         setLoadClick(loadClicks = !loadClicks)
     }
-
-    // const minus = () => {
-    //     setZakazArr(count -1)
-    // };
-
-    // const plus = () => {
-    //     setZakazArr(count +1)
-    // };
 
     return (
         <Container className='basket-page-block' fluid>

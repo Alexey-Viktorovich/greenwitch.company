@@ -15,34 +15,23 @@
 }
 
 .content-text {
+    filter: none;
     display: flex;
     justify-content: center;
     width: 100%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     color: #fff;
-    z-index: 0;
-    position: fixed;
-    top: 150px;
+    z-index: 1;
+    position: absolute;
+    top: 200px;
 }
 
 .content-text h1{
     font-size: 70px;
-    color: #fff;
-    filter: none;
-}
-
-@media screen  and (max-width: 1200px) {
-    .content-text {
-        margin-bottom: 260px;
-    }
 }
 
 @media screen  and (max-width: 1000px) {
-    .content-text {
-        margin-bottom: 235px;
-    }
-
     .content-text h1{
         font-size: 60px;
     }
@@ -57,7 +46,7 @@
 
 @media screen  and (max-width: 700px) {
     .content-text {
-        margin-bottom: 160px;
+        top: 150px
     }
 
     .content-text h1{
@@ -66,23 +55,7 @@
 }
 
 @media screen  and (max-width: 550px) {
-    .content-text {
-        margin-bottom: 120px;
-    }
-
-    .content-text h1{
+   .content-text h1{
         font-size: 32px;
-    }
-}
-
-@media screen  and (max-width: 450px) {
-    .content-text {
-        margin-bottom: 95px;
-    }
-}
-
-@media screen  and (max-width: 370px) {
-    .content-text {
-        margin-bottom: 75px;
     }
 }
