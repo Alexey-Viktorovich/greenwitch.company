@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -7,16 +7,18 @@ import { FaBasketShopping } from "react-icons/fa6"
 
 import './navb.css';
 import Order from '../order/order';
-
+import data from '../content/content.json';
 
 export default function NavbarMenu(props) {
   let [cartOpen, setCartOpen] = useState(false)
   let [menuBurger, setMenuBurger] = useState(false)
+  let [localeState, setLocaleState] = useState(false)
+  let [content, setContent] = useState(data.localeUA)
   // let [auseCount, setAuseCount] = useState(0)   //для зміни стану лічильника, щоб з'явилась прихована кнопка авторизації. Треба на кнопці змінити класнейм та повісити обробник подій на якийсь елемент
 
   const {orders} = props;
   const {count} = props;
-
+  const {locale} = props;
   //для зміни стану лічильника, щоб з'явилась прихована кнопка авторизації. Треба на кнопці змінити класнейм та повісити обробник подій на якийсь елемент
   // const clickCountAuse = () => {
   //   setAuseCount(auseCount +1)
@@ -32,9 +34,9 @@ export default function NavbarMenu(props) {
           <Order onDelete={props.onDelete} key={el.id} item={el}/>
         ))}
         <div className='sum'>
-          <b>Разом: {new Intl.NumberFormat().format(sum)} $</b>
+          <b>{content.navbar.sum} {new Intl.NumberFormat().format(sum)} $</b>
           <NavLink to="/basket">
-              <Nav className='show-order-button' onClick={() => setCartOpen(cartOpen = false)}>Переглянути</Nav>
+              <Nav className='show-order-button' onClick={() => setCartOpen(cartOpen = false)}>{content.navbar.showorderbutton}</Nav>
           </NavLink>
         </div>
       </>
@@ -44,7 +46,7 @@ export default function NavbarMenu(props) {
   const showNothing = () => {
     return (
       <div className='nothing'>
-        <h3>Кошик пустий</h3>
+        <h3>{content.basket.basketclin}</h3>
       </div>
     )
   }
@@ -64,6 +66,30 @@ export default function NavbarMenu(props) {
       setCartOpen(cartOpen = !cartOpen)
     } else if (menu === false) {
       setMenuBurger(menuBurger = !menuBurger)
+    }
+  }
+
+  useEffect(() => {
+    if (props.locale === true) {
+      setLocaleState(localeState = true)
+    } else {
+      setLocaleState(localeState = false)
+    }
+    {locale ? setContent(content = data.localeUA) : setContent(content = data.localeENG)}
+    
+  }, [props.locale])
+
+
+  const Locale = () => {
+    let locale = localeState
+    if (locale === true) {
+      return (
+        <img className="locale" src='./img/icon-ua.png' onClick={() => props.onLocale()}/>
+        )
+      } else {
+        return (
+          <img className="locale" src='./img/icon-eng.png' onClick={() => props.onLocale()}/>
+        )
     }
   }
   
@@ -98,7 +124,6 @@ export default function NavbarMenu(props) {
     margin: 3
   }
 
-
   return (
     <>
       <Navbar bg="light" fixed='top' className='padtop'>
@@ -111,27 +136,30 @@ export default function NavbarMenu(props) {
                 width="50"
                 height="50"
                 className='d-inline-block align-top'
-              />{' '}
+              />
             </NavLink>
           </Nav>
           <Nav className='nav-classic'>
             <NavLink to="/" className='nav-tab'>
-                <Nav style={button}>Головна</Nav>
+                <Nav style={button} >{content.navbar.navgolovna}</Nav>
             </NavLink>
             <NavLink to="/about-us" className='nav-tab'>
-                <Nav style={button}>Інфо</Nav>
+                <Nav style={button}>{content.navbar.navinfo}</Nav>
             </NavLink>
             <NavLink to="/catalog" className='nav-tab'>
-                <Nav style={button}>Каталог</Nav>
+                <Nav style={button}>{content.navbar.navcatalog}</Nav>
             </NavLink>
             {/* <NavLink to="/ause" className='nav-tab ause'>
-                <Nav style={button}>Авторизація</Nav>
+                <Nav style={button}>{content.navbar.navause}</Nav>
             </NavLink> */}
+            {/* <Locale /> */}
           </Nav>
           <div className={classNameMenuBat} onClick={() => showElemen()}>
             <span></span>
           </div>
+          
           <div>
+            <Locale />
             <FaBasketShopping
                 onClick={() => setCartOpen(cartOpen = !cartOpen)}
                 className={className} />
@@ -152,18 +180,18 @@ export default function NavbarMenu(props) {
         <div className='none' onClick={() => showElemen()}></div>
           <div className='burger-col'>
             <NavLink onClick={() => showElemen()} to="/" className='nav-tab'>
-                <Nav style={button}>Головна</Nav>
+                <Nav style={button}>{content.navbar.navgolovna}</Nav>
             </NavLink>
             <NavLink onClick={() => showElemen()} to="/about-us" className='nav-tab'>
-                <Nav style={button}>Інфо</Nav>
+                <Nav style={button}>{content.navbar.navinfo}</Nav>
             </NavLink>
             <NavLink onClick={() => showElemen()} to="/catalog" className='nav-tab'>
-                <Nav style={button}>Каталог</Nav>
+                <Nav style={button}>{content.navbar.navcatalog}</Nav>
             </NavLink>
           </div>
           {/* <div className='burger-col2'>
             <NavLink to="/ause" className='nav-tab ause'>
-                <Nav style={button}>Авторизація</Nav>
+                <Nav style={button}>{content.navbar.navause}</Nav>
             </NavLink>
           </div> */}
         </div>

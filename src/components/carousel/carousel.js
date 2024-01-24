@@ -1,10 +1,19 @@
+import { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom";
 
 import './carousel.css';
+import data from '../content/content.json';
 
-export default function CarouselHome() {
+export default function CarouselHome(props) {
+  let [content, setContent] = useState(data.localeUA)
+
+  const {locale} = props;
+
+  useEffect(() => {
+      {locale ? setContent(content = data.localeUA) : setContent(content = data.localeENG)}
+  })
 
   return (
     <Carousel fade>
@@ -17,7 +26,7 @@ export default function CarouselHome() {
         <Carousel.Caption>
           <div className='context'>
             <h1>Greenwitch</h1>
-            <p>Завантажуй мобільний додаток та вирощуй здорові рослини без зайвих зусиль</p>
+            <p>{content.carusel.p}</p>
             <div className='d-flex buttons'>
                 <a href="https://play.google.com/store/apps/details?id=com.greenko"
                   title=""
@@ -38,10 +47,10 @@ export default function CarouselHome() {
         <Carousel.Caption>
           <div className='context'>
             <h1>Greenwitch</h1>
-            <p>Купуй додаткову продукцію та розширюй свої можливості керування</p>
+            <p>{content.carusel.p2}</p>
             <div className='d-flex buttons'>
               <NavLink className='btn btn-primary' to="/catalog">
-                <Nav>Замовити</Nav>
+                <Nav>{content.carusel.button}</Nav>
               </NavLink>
             </div>
           </div>
@@ -56,7 +65,7 @@ export default function CarouselHome() {
         <Carousel.Caption>
           <div className='context'>
             <h1>Greenwitch</h1>
-            <p>Піднімай свій досвід вирощування на новий рівень</p>
+            <p>{content.carusel.p3}</p>
             <div className='d-flex buttons'>
                 <a href="https://t.me/greenwitch_company"
                   title=""
@@ -74,7 +83,7 @@ export default function CarouselHome() {
         <Carousel.Caption>
           <div className='context'>
             <h1>Greenwitch</h1>
-            <p>Принось нам свій гроубокс та ми прокачаємо його на повну</p>
+            <p>{content.carusel.p4}</p>
             <div className='d-flex buttons'>
                 <a href="https://www.facebook.com/Greenwitch-112318907206992"
                   title=""
@@ -92,10 +101,10 @@ export default function CarouselHome() {
         <Carousel.Caption>
           <div className='context'>
             <h1>Greenwitch</h1>
-            <p>Купуй нашу круту лампу та отримуй в 2 рази більше врожаю</p>
+            <p>{content.carusel.p5}</p>
             <div className='d-flex buttons'>
               <NavLink className='btn btn-primary' to="/catalog">
-                <Nav>Замовити</Nav>
+                <Nav>{content.carusel.button}</Nav>
               </NavLink>
             </div>
           </div>

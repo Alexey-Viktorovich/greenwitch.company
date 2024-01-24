@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Col } from 'react-bootstrap';
 import { FaTrash } from "react-icons/fa";
-import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom";
 
-import HeaderFone from '../headerFone/headerFoneBasket';
+import HeaderFoneBasket from '../headerFone/headerFoneBasket';
 import '../page-css/basket.css';
+import data from '../content/content.json';
 
 export default function Basket(props) {
     const [lastName, setLastName] = useState('')
@@ -17,14 +17,15 @@ export default function Basket(props) {
     const [lastNameDirty, setLastNameDirty] = useState(false)
     const [emailDirty, setEmailDirty] = useState(false)
     const [mobileDirty, setMobileDirty] = useState(false)
-    const [lastNameError, setLastNameError] = useState('Поле не може бути пустим')
-    const [emailError, setEmailError] = useState('Поле не може бути пустим')
-    const [mobileError, setMobileError] = useState('Поле не може бути пустим')
+    let [lastNameError, setLastNameError] = useState('Поле не може бути пустим')
+    let [emailError, setEmailError] = useState('Поле не може бути пустим')
+    let [mobileError, setMobileError] = useState('Поле не може бути пустим')
     const [formValid, setFormValid] = useState(false)
     let [loadClicks, setLoadClick] = useState(false)
     const [ordersArr, setZakazArr] = useState(props.orders.map(el => el.title))
+    let [content, setContent] = useState(data.localeUA)
 
-
+    const {locale} = props;
 
     useEffect(() => {
         if (lastNameError || emailError || mobileError) {
@@ -33,9 +34,13 @@ export default function Basket(props) {
             setFormValid(true)
         } if (props.orders.length < 1) {
             setFormValid(false)
-        } 
+        }
+
     }, [lastNameError, emailError, mobileError, props.orders.length])
 
+    useEffect(() => {
+        {locale ? setContent(content = data.localeUA) : setContent(content = data.localeENG)}
+    })
 
     const orders = () => {
         return (
@@ -55,7 +60,7 @@ export default function Basket(props) {
     const showNothing = () => {
         return (
           <div className='nothing'>
-            <h3>Кошик пустий</h3>
+            <h3>{content.basket.basketclin}</h3>
           </div>
         )
     }
@@ -88,9 +93,9 @@ export default function Basket(props) {
     const lNameHandler = (e) => {
         setLastName(e.target.value)
         if (e.target.value.length <3 || e.target.value.length > 20) {
-            setLastNameError('Поле повинно містити від 3 до 20 символів')
+            setLastNameError(lastNameError = content.basket.errors.lastnameerror)
             if (!e.target.value) {
-                setLastNameError('Поле не може бути пустим')
+                setLastNameError(lastNameError = content.basket.errors.defoulerror)
             }
         } else {
             setLastNameError('')
@@ -101,9 +106,9 @@ export default function Basket(props) {
         setEmail(e.target.value)
         const re = /^(?=.{6,254}$)(?![-.])(?!.*[.-]{2})(?!.*[.+-]@)[a-zA-Z0-9_+.-]{1,63}@[a-zA-Z0-9]([a-zA-Z0-9.-])*\.[a-zA-Z]{2,6}$/;
         if (!re.test(String(e.target.value).toLowerCase())) {
-            setEmailError('Email не відповідає правилу')
+            setEmailError(emailError = content.basket.errors.emailerror)
             if (!e.target.value) {
-                setEmailError('Поле не може бути пустим')
+                setEmailError(emailError = content.basket.errors.defoulerror)
             }
         } else {
             setEmailError('')
@@ -115,11 +120,11 @@ export default function Basket(props) {
         setMobile(e.target.value)
         const regexpTel = /^(\+3|3|8)?[s\-]?\(?[489][0-9]{2}\)?[s\-]?[0-9]{3}[s\-]?[0-9]{2}[s\-]?[0-9]{2}$ /;
         if (e.target.value.length <10 || e.target.value.length > 12) {
-            setMobileError('Номер повинен містити 10-12 символів')
+            setMobileError(mobileError = content.basket.errors.mobileerror)
             if (!e.target.value) {
-                setMobileError('Поле не може бути пустим')
+                setMobileError(mobileError = content.basket.errors.defoulerror)
             } else if (!regexpTel.test(mobile)) {
-                setMobileError('Номер повинен містити 10-12 символів')
+                setMobileError(mobileError = content.basket.errors.mobileerror)
             }
         } else {
             setMobileError('')
@@ -141,12 +146,12 @@ export default function Basket(props) {
 
     return (
         <Container className='basket-page-block' fluid>
-            <HeaderFone />
+            <HeaderFoneBasket locale={props.locale} />
             <Container className='basket-block' fluid>
                 <div className='basket-block1'>
                         <Row className='basket-item'>
                             <h1>
-                                <b>Список замовлення</b>
+                                <b>{content.basket.baskettitle}</b>
                             </h1>
                         </Row>
                         <Row className='basket-shop-cart'>
@@ -155,18 +160,18 @@ export default function Basket(props) {
                 </div>
                 <Container className='basket-form'>
                     <div id="calculation" className='sum'>
-                        <b>Підсумок кошика: {new Intl.NumberFormat().format(sum)} $</b>
+                        <b>{content.basket.basketsum} {new Intl.NumberFormat().format(sum)} $</b>
                     </div> 
                     <form onSubmit={handleSubmit} className='form'>
                         <div className='form-block'>
-                            <input onChange={e => lNameHandler(e)} onBlur={e => blurHandler(e)} maxLength="20" value={lastName} type="text" placeholder="Ім'я" name='lastName' />
+                            <input onChange={e => lNameHandler(e)} onBlur={e => blurHandler(e)} maxLength="20" value={lastName} type="text" placeholder={content.basket.placeholder.name} name='lastName' />
                                 {(lastNameDirty && lastNameError) && <div className='errors' style={{color: 'red'}}>{lastNameError}</div>}
-                            <input onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type="text" placeholder="Email" name='email' />
+                            <input onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type="text" placeholder={content.basket.placeholder.email} name='email' />
                                 {(emailDirty && emailError) && <div className='errors' style={{color: 'red'}}>{emailError}</div>}
-                            <input onChange={e => mobileHandler(e)} onBlur={e => blurHandler(e)} maxLength="12" value={mobile} type="tel" placeholder="Контактний номер" name='mobile' />
+                            <input onChange={e => mobileHandler(e)} onBlur={e => blurHandler(e)} maxLength="12" value={mobile} type="tel" placeholder={content.basket.placeholder.phone} name='mobile' />
                                 {(mobileDirty && mobileError) && <div className='errors' style={{color: 'red'}}>{mobileError}</div>}
                             <br/>
-                            <button type="submit" disabled={!formValid} onClick={() => props.onAddZakaz(ordersArr, lastName, email, mobile, sum)} className='form-btn-active' >Оформити</button>
+                            <button type="submit" disabled={!formValid} onClick={() => props.onAddZakaz(ordersArr, lastName, email, mobile, sum)} className='form-btn-active'>{content.basket.basketbutton}</button>
                         </div>
                     </form>
                 </Container>
@@ -174,11 +179,11 @@ export default function Basket(props) {
             <div className={classNames}>
                 <div className='final'>
                     <Container className='final-block'>
-                        <h1><b>Дякуємо!</b></h1>
-                        <h3><b>Ваше замовлення прийняте</b></h3>
-                        <p>Менеджер зв'яжеться з вами найближчим часом</p>
+                        <h1><b>{content.basket.basketfinal.finaltitle}</b></h1>
+                        <h3><b>{content.basket.basketfinal.finaltitle1}</b></h3>
+                        <p>{content.basket.basketfinal.finaltext}</p>
                         <NavLink to="/">
-                            <Nav onClick={() => props.onAllDelete()} >Завершити</Nav>
+                            <Nav onClick={() => props.onAllDelete()} >{content.basket.basketfinal.finalbutton}</Nav>
                         </NavLink>
                     </Container>
                 </div>
