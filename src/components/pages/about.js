@@ -1,29 +1,39 @@
+import { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import HeaderFone from '../headerFone/headerFoneAbout';
+import HeaderFoneAbout from '../headerFone/headerFoneAbout';
 import '../page-css/about.css';
+import data from '../content/content.json';
 
-export default function About() {
+export default function About(props) {
+    let [content, setContent] = useState(data.localeUA)
+
+    const {locale} = props;
+
+    useEffect(() => {
+        {locale ? setContent(content = data.localeUA) : setContent(content = data.localeENG)}
+    })
+
     return(
         <Container className='about' fluid>
-            <HeaderFone />
+            <HeaderFoneAbout locale={props.locale} />
             <div className='about-text'>
                 <Container className='text'>
                     <Row>
-                        <h3><b>Greenwitch – це мобільний додаток для віддаленого моніторингу росту всіх типів рослин. Ви можете використовувати такі функції:</b></h3>
+                        <h3><b>{content.aboutpage.h3}</b></h3>
                         <div>
                             <ul>
-                                <li>показники датчиків рівня освітлення, температури, вологості ґрунту і повітря</li>
-                                <li>автоматичне або ручне керування поливом , освітленням, вентиляцією та обігрівом</li>
-                                <li>камера спостереження</li>
-                                <li>рекомендації по догляду</li>
-                                <li>можливість перепрошивки плати</li>
-                                <li>можливість створювати, редагувати і переглядати щоденні повторювані події.</li>
-                                <li>щоденні звіти по догляду за рослинами за минулий день</li>
+                                <li>{content.aboutpage.li}</li>
+                                <li>{content.aboutpage.li1}</li>
+                                <li>{content.aboutpage.li2}</li>
+                                <li>{content.aboutpage.li3}</li>
+                                <li>{content.aboutpage.li4}</li>
+                                <li>{content.aboutpage.li5}</li>
+                                <li>{content.aboutpage.li6}</li>
                             </ul>
                         </div>
-                        <p>Додаток покаже вам дані і графіки за обраний період часу, підкаже які кроки зробити для забезпечення сприятливого росту ваших рослин.</p>
+                        <p>{content.aboutpage.p}</p>
                     </Row>
                 </Container>
             </div>

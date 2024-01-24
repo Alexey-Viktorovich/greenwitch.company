@@ -1,0 +1,388 @@
+{
+  "localeUA": {
+      "navbar": {
+        "navgolovna": "Головна",
+        "navinfo": "Інфо",
+        "navcatalog": "Каталог",
+        "navause": "Авторизація",
+        "showorderbutton": "Переглянути",
+        "sum": "Сума:"
+      },
+      "carusel": {
+        "button": "Замовити",
+        "p": "Завантажуй мобільний додаток та вирощуй здорові рослини без зайвих зусиль",
+        "p2": "Купуй додаткову продукцію та розширюй свої можливості керування",
+        "p3": "Піднімай свій досвід вирощування на новий рівень",
+        "p4": "Принось нам свій гроубокс та ми прокачаємо його на повну",
+        "p5": "Купуй нашу круту лампу та отримуй в 2 рази більше врожаю"
+      },
+      "headerfone": {
+        "about": "Загальна інформація",
+        "basket": "Кошик",
+        "catalog": "Каталог"
+      },
+      "homepage": {
+        "infotext": {
+          "h1": "Що таке Greenwitch",
+          "p": "Мобільний додаток Greenwitch призначений для дистанційного моніторингу та керування зростанням ваших рослин. Завдяки спеціально створеній програмі ви можете контролювати рівень освітлення, температуру, продування, вологість ґрунту та повітря, полив і зростання будь-яких видів квітів, рослин, мікрозелені, ягід, овочів тощо. Додаток покаже вам усі графіки та дані за вибраний період часу, а також підкажуть, які кроки зробити, щоб забезпечити комфортний і сприятливий ріст рослин."
+        },
+        "infotextmini": [
+            {
+              "id": "1",
+              "img": "http://greenwitch.company/wp-content/uploads/2021/06/smart-house.png",
+              "titleh4": "Встанови додаток",
+              "text": "Завантажуй додаток Greenwitch та піклуйся про свої рослини завдяки віддаленому керуванню. Контролюй їх здорове зростання."
+            },
+            {
+              "id": "2",
+              "img": "http://greenwitch.company/wp-content/uploads/2021/06/growth-1.png",
+              "titleh4": "Керуй віддалено",
+              "text": "Налаштовуй необхідні параметри, додавай дії по догляду за рослинами в календар, керуй датчиками та слідкуй за всіма даними онлайн."
+            },
+            {
+              "id": "3",
+              "img": "http://greenwitch.company/wp-content/uploads/2021/06/growth.png",
+              "titleh4": "Придбай девайси",
+              "text": "Придбай необхідні тобі датчики і девайси, та керуй ними у будь-який зручний час. Насолоджуйся гарним врожаем!"
+            }
+          ],
+        "productsbut": "Каталог",
+        "team": {
+          "h1": "Наша команда",
+          "h5": "Ми молодий український стартап",
+          "teamcontent": [
+            {
+              "id": "1",
+              "img": "http://greenwitch.company/wp-content/uploads/2019/12/22829133_1944876902393620_6536130414175250312_o-300x300.jpg",
+              "texth4": "Олексій Юрченко",
+              "texth6": "Greenwitch company owner, CEO, Technical lead"
+            },
+            {
+              "id": "2",
+              "img": "http://greenwitch.company/wp-content/uploads/2021/06/Untitled-1-285x300.jpg",
+              "texth4": "Іван Легенький",
+              "texth6": "Mobile developer"
+            },
+            {
+              "id": "3",
+              "img": "http://greenwitch.company/wp-content/uploads/2019/12/14207753_1056933651086729_1744851474077619100_o-300x300.jpg",
+              "texth4": "Анна Юрченко",
+              "texth6": "Designer, marketing director"
+            },
+            {
+              "id": "4",
+              "img": "http://greenwitch.company/wp-content/uploads/2021/06/IMG_20210625_123449-300x300.jpg",
+              "texth4": "Сергій Руднев",
+              "texth6": "Embedded developer"
+            }
+          ]
+        }
+      },
+      "aboutpage": {
+        "h3": "Greenwitch – це мобільний додаток для віддаленого моніторингу росту всіх типів рослин. Ви можете використовувати такі функції:",
+        "li": "показники датчиків рівня освітлення, температури, вологості ґрунту і повітря",
+        "li1": "автоматичне або ручне керування поливом , освітленням, вентиляцією та обігрівом",
+        "li2": "камера спостереження",
+        "li3": "рекомендації по догляду",
+        "li4": "можливість перепрошивки плати",
+        "li5": "можливість створювати, редагувати і переглядати щоденні повторювані події",
+        "li6": "щоденні звіти по догляду за рослинами за минулий день",
+        "p": "Додаток покаже вам дані і графіки за обраний період часу, підкаже які кроки зробити для забезпечення сприятливого росту ваших рослин."
+      },
+      "catalogpage": {
+        "items": [
+          {
+            "id": 1,
+            "title": "LED світильник GrowBro 300",
+            "titledesc": "LED лампа 300Вт на діодах Seoul Semiconductors з 3 датчиками",
+            "img": "LED-lamp-GrowBro-300",
+            "img1": "LED-lamp-GrowBro-3001",
+            "img2": "LED-lamp-GrowBro-3002",
+            "descp1": "Окремо ряд синіх діодів 450Нм и і червоних 660Нм. Синій і червоний включаються окремо з мобільного додатку. Потужність регулюється за рахунок діммера в мобільному додатку. Функція схід/захід сонця на 20хв. Включення/вимкнення по графіку. 3 датчики для контролю.",
+            "descTextTitle": "Комплектація:",
+            "descText": "- LED модуль на 150Вт – 2шт",
+            "descText1": "- драйвер mean-well",
+            "descText2": "- радіатор охолодження з примусовою вентиляцією",
+            "descText3": "- модуль керування",
+            "descText4": "- датчик температури повітря",
+            "descText5": "- датчик вологості повітря",
+            "descText6": "- датчик інтенсивності освітлення",
+            "descTextTitle1": "",
+            "descText7": "",
+            "descText8": "",
+            "descText9": "",
+            "descText10": "",
+            "category": "Led лампи",
+            "price": "415.00",
+            "count": "1"
+          },
+          {
+            "id": 2,
+            "title": "Контроллер клімату для теплиць та гроубоксів",
+            "titledesc": "Greenwitch standart controller – прокачана версія для просунутих користувачів",
+            "img": "controler",
+            "img1": "controler1",
+            "img2": "controler2",
+            "descp1": "Дозволяє отримувати інформацію про клімат у вашій теплиці або гроубоксі і керувати освітленням, поливом, вентиляцією та обігрівом. В комплекті 4 датчки та 4 реле керування.",
+            "descTextTitle": "Комплектація:",
+            "descText": "- подовжувач на 5 вилок, з ручним вимикачем",
+            "descText1": "- датчик температури повітря",
+            "descText2": "- датчик вологості повітря",
+            "descText3": "- датчик вологості грунту",
+            "descText4": "- датчик інтенсивності освітлення",
+            "descText5": "",
+            "descText6": "",
+            "descTextTitle1": "Віддалене керування можливе з додатку або за запланованим графіком:",
+            "descText7": "- освітленням ( можна підключити лампу до 1кВт )",
+            "descText8": "- поливом ( можна підключити насос до 1кВт )",
+            "descText9": "- вентиляцією ( можна підключити вентилятори до 1кВт )",
+            "descText10": "- обігрівом ( можна підключити обігрівач до 1кВт )",
+            "category": "Девайси",
+            "price": "100.00",
+            "count": "1"
+          },
+          {
+            "id": 3,
+            "title": "LED світильник GrowBro 150",
+            "titledesc": "LED лампа на діодах Seoul Semiconductors з 3 датчиками та фотокамерою",
+            "img": "LED-lamp-GrowBro-150",
+            "img1": "LED-lamp-GrowBro-1501",
+            "img2": "LED-lamp-GrowBro-1502",
+            "descp1": "Окремо ряд синіх діодів 450Нм и і червоних 660Нм. Синій і червоний включаються окремо з мобільного додатку. Потужність регулюється за рахунок діммера в мобільному додатку. Функція схід/захід сонця на 20хв. Включення/вимкнення по графіку. 3 датчики для контролю.",
+            "descTextTitle": "Комплектація:",
+            "descText": "- LED модуль на 150Вт",
+            "descText1": "- драйвер mean-well",
+            "descText2": "- радіатор охолодження з примусовою вентиляцією",
+            "descText3": "- модуль керування",
+            "descText4": "- датчик температури повітря",
+            "descText5": "- датчик вологості повітря",
+            "descText6": "",
+            "descTextTitle1": "",
+            "descText7": "",
+            "descText8": "",
+            "descText9": "",
+            "descText10": "",
+            "category": "Led лампи",
+            "price": "220.00",
+            "count": 1
+          }
+        ]
+      },
+      "basket": {
+        "basketclin": "Кошик пустий",
+        "errors": {
+          "defoulerror": "Поле не може бути пустим",
+          "lastnameerror": "Поле повинно містити від 3 до 20 символів",
+          "emailerror": "Email не відповідає правилу",
+          "mobileerror": "Номер повинен містити 10-12 символів"
+        },
+        "baskettitle": "Список замовлення",
+        "basketsum": "Підсумок кошика:",
+        "basketbutton": "Оформити",
+        "basketfinal": {
+          "finaltitle": "Дякуємо!",
+          "finaltitle1": "Ваше замовлення прийняте",
+          "finaltext": "Менеджер зв'яжеться з вами найближчим часом",
+          "finalbutton": "Завершити"
+        },
+        "placeholder": {
+          "name": "Ім'я",
+          "email": "Email",
+          "phone": "Контактний номер"
+        }
+      }
+    },
+  "localeENG": {
+    "navbar": {
+      "navgolovna": "Home",
+      "navinfo": "Info",
+      "navcatalog": "Catalog",
+      "navause": "Authorization",
+      "showorderbutton": "View",
+      "sum": "Sum:"
+    },
+    "carusel": {
+      "button": "Order",
+      "p": "Download the mobile app and grow healthy plants effortlessly",
+      "p2": "Buy additional products and expand your management capabilities",
+      "p3": "Take your growing experience to the next level",
+      "p4": "Bring us your grow box and we'll upgrade it to the fullest",
+      "p5": "Buy our cool lamp and get 2 times more yield"
+    },
+    "headerfone": {
+      "about": "General Information",
+      "basket": "Shopping Cart",
+      "catalog": "Catalog"
+    },
+    "homepage": {
+      "infotext": {
+        "h1": "What is it Greenwitch",
+        "p": "The Greenwitch mobile app is designed to remotely monitor and control the growth of your plants. Thanks to a specially created program, you can control the level of light, temperature, airing, soil and air humidity, watering and growth of any kind of flowers, plants, microgreens, berries, vegetables, etc. The application will show you all the graphs and data for the selected period of time, as well as suggest what steps to take to ensure comfortable and favorable plant growth."
+      },
+      "infotextmini": [
+        {
+          "id": "1",
+          "img": "http://greenwitch.company/wp-content/uploads/2021/06/smart-house.png",
+          "titleh4": "Install the application",
+          "text": "Download the Greenwitch app and take care of your plants with remote control. Control their healthy growth."
+        },
+        {
+          "id": "2",
+          "img": "http://greenwitch.company/wp-content/uploads/2021/06/growth-1.png",
+          "titleh4": "Manage remotely",
+          "text": "Configure the necessary parameters, add plant care actions to the calendar, control the sensors, and track all the data online."
+        },
+        {
+          "id": "3",
+          "img": "http://greenwitch.company/wp-content/uploads/2021/06/growth.png",
+          "titleh4": "Purchase devices",
+          "text": "Buy the sensors and devices you need and control them at any time. Have a good harvest!"
+        }
+      ],
+      "productsbut": "Catalog",
+      "team": {
+        "h1": "Our Team",
+        "h5": "We are a young Ukrainian startup",
+        "teamcontent": [
+          {
+            "id": "1",
+            "img": "http://greenwitch.company/wp-content/uploads/2019/12/22829133_1944876902393620_6536130414175250312_o-300x300.jpg",
+            "texth4": "Alexey Yurchenko",
+            "texth6": "Greenwitch company owner, CEO, Technical lead"
+          },
+          {
+            "id": "2",
+            "img": "http://greenwitch.company/wp-content/uploads/2021/06/Untitled-1-285x300.jpg",
+            "texth4": "Ivan Lehenkyi",
+            "texth6": "Mobile developer"
+          },
+          {
+            "id": "3",
+            "img": "http://greenwitch.company/wp-content/uploads/2019/12/14207753_1056933651086729_1744851474077619100_o-300x300.jpg",
+            "texth4": "Anna Yurchenko",
+            "texth6": "Designer, marketing director"
+          },
+          {
+            "id": "4",
+            "img": "http://greenwitch.company/wp-content/uploads/2021/06/IMG_20210625_123449-300x300.jpg",
+            "texth4": "Serhiy Rudnev",
+            "texth6": "Embedded developer"
+          }
+        ]
+      }
+    },
+    "aboutpage": {
+      "h3": "Greenwitch is a mobile application for remote monitoring of the growth of all types of plants. You can use the following functions:",
+      "li": "readings of light, temperature, soil and air humidity sensors",
+      "li1": "automatic or manual control of watering, lighting, ventilation and heating",
+      "li2": "surveillance camera",
+      "li3": "care recommendations",
+      "li4": "possibility of flashing the board",
+      "li5": "ability to create, edit and view daily recurring events",
+      "li6": "daily reports on plant care for the previous day",
+      "p": "The application will show you data and graphs for the selected period of time, suggest what steps to take to ensure favorable growth of your plants."
+    },
+    "catalogpage": {
+      "items": [
+        {
+          "id": 1,
+          "title": "GrowBro 300 LED luminaire",
+          "titledesc": "Seoul Semiconductors 300W diode LED lamp with 3 sensors",
+          "img": "LED-lamp-GrowBro-300",
+          "img1": "LED-lamp-GrowBro-3001",
+          "img2": "LED-lamp-GrowBro-3002",
+          "descp1": "Separate row of 450Nm blue diodes and 660Nm red diodes. Blue and red are turned on separately from the mobile application. The power is regulated by a dimmer in the mobile application. Sunrise/sunset function for 20 minutes. Switching on/off according to the schedule. 3 sensors for monitoring.",
+          "descTextTitle": "Package contents:",
+          "descText": "- LED module for 150 W - 2 pcs.",
+          "descText1": "- driver mean-well",
+          "descText2": "- cooling radiator with forced ventilation",
+          "descText3": "- control module",
+          "descText4": "- air temperature sensor",
+          "descText5": "- air humidity sensor",
+          "descText6": "- light intensity sensor",
+          "descTextTitle1": "",
+          "descText7": "",
+          "descText8": "",
+          "descText9": "",
+          "descText10": "",
+          "category": "Led lamps",
+          "price": "415.00",
+          "count": "1"
+        },
+        {
+          "id": 2,
+          "title": "Climate controller for greenhouses and grow boxes",
+          "titledesc": "Greenwitch standard controller - upgraded version for advanced users",
+          "img": "controler",
+          "img1": "controler1",
+          "img2": "controler2",
+          "descp1": "Allows you to get information about the climate in your greenhouse or growbox and control lighting, watering, ventilation and heating. Includes 4 sensors and 4 control relays.",
+          "descTextTitle": "Package contents:",
+          "descText": "- extension cord for 5 plugs, with a manual switch",
+          "descText1": "- air temperature sensor",
+          "descText2": "- air humidity sensor",
+          "descText3": "- soil moisture sensor",
+          "descText4": "- light intensity sensor",
+          "descText5": "",
+          "descText6": "",
+          "descTextTitle1": "Remote control is possible from the app or on a scheduled schedule:",
+          "descText7": "- lighting (you can connect a lamp up to 1 kW)",
+          "descText8": "- watering (you can connect a pump up to 1 kW)",
+          "descText9": "- ventilation (fans up to 1 kW can be connected)",
+          "descText10": "- heating ( you can connect a heater up to 1 kW)",
+          "category": "Devices",
+          "price": "100.00",
+          "count": "1"
+        },
+        {
+          "id": 3,
+          "title": "GrowBro 150 LED luminaire",
+          "titledesc": "LED diode lamp by Seoul Semiconductors with 3 sensors and a camera",
+          "img": "LED-lamp-GrowBro-150",
+          "img1": "LED-lamp-GrowBro-1501",
+          "img2": "LED-lamp-GrowBro-1502",
+          "descp1": "Separate row of 450Nm blue diodes and 660Nm red diodes. Blue and red are turned on separately from the mobile application. The power is regulated by a dimmer in the mobile application. Sunrise/sunset function for 20 minutes. Switching on/off according to the schedule. 3 sensors for monitoring.",
+          "descTextTitle": "Package contents:",
+          "descText": "- LED module for 150W",
+          "descText1": "- mean-well driver",
+          "descText2": "- cooling radiator with forced ventilation",
+          "descText3": "- control module",
+          "descText4": "- air temperature sensor",
+          "descText5": "- air humidity sensor",
+          "descText6": "",
+          "descTextTitle1": "",
+          "descText7": "",
+          "descText8": "",
+          "descText9": "",
+          "descText10": "",
+          "category": "Led lamps",
+          "price": "220.00",
+          "count": 1
+        }
+      ]
+    },
+    "basket": {
+      "basketclin": "Basket is empty" ,
+      "errors": {
+        "defoulerror": "Field cannot be empty",
+        "lastnameerror": "Field must be between 3 and 20 characters",
+        "emailerror": "Email does not match the rule",
+        "mobileerror": "The number must be 10-12 characters long"
+      },
+      "baskettitle": "Order list",
+      "basketsum": "Basket summary:",
+      "basketbutton": "Checkout",
+      "basketfinal": {
+        "finaltitle": "Thank you!",
+        "finaltitle1": "Your order has been accepted",
+        "finaltext": "A manager will contact you shortly",
+        "finalbutton": "Complete"
+      },
+      "placeholder": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Contact number"
+      }
+    }
+  }
+}
