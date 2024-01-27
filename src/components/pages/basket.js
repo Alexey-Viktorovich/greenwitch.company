@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Col } from 'react-bootstrap';
 import { FaTrash } from "react-icons/fa";
+import { MdOutlineDoDisturbOn } from "react-icons/md";
+import { MdAddCircleOutline } from "react-icons/md";
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom";
 
@@ -22,7 +24,7 @@ export default function Basket(props) {
     let [mobileError, setMobileError] = useState('Поле не може бути пустим')
     const [formValid, setFormValid] = useState(false)
     let [loadClicks, setLoadClick] = useState(false)
-    const [ordersArr, setZakazArr] = useState(props.orders.map(el => el.title))
+    let [ordersArr, setOrdersArr] = useState(props.orders)
     let [content, setContent] = useState(data.localeUA)
 
     const {locale} = props;
@@ -42,21 +44,63 @@ export default function Basket(props) {
         {locale ? setContent(content = data.localeUA) : setContent(content = data.localeENG)}
     })
 
+    const deleteOrders = ((id) => {
+        props.onDelete(id)
+        setOrdersArr(ordersArr.filter(ordersArr => ordersArr.id !== id))
+    })
+
     const orders = () => {
         return (
-            props.orders.map(el => (
-                <Row key={el.id}>
-                    <Col className='basket-order-item'>
-                        <Col><img src={"./img/" + el.img + ".png"} alt='' /></Col>
-                        <Col>{el.title}</Col>
-                        <Col>{el.price} $</Col>
-                        <Col><FaTrash className='delete-icon' key={el.id} onClick={() => props.onDelete(el.id)}/></Col>
-                    </Col>
-                </Row>
-            ))
+            ordersArr.map(el => {
+                const { img, title, price, id, quantity } = el;
+                const sum = price * quantity
+                    return (
+                    <Row key={id}>
+                        <Col className='basket-order-item'>
+                            <Col><img src={"./img/" + img + ".png"} alt='' /></Col>
+                            <Col>{title}</Col>
+                            <Col>{sum} $</Col>
+                            <Col className='last-div-orders'>
+                                <div className='quantity'>
+                                    <div className='quantity-but' onClick={() => {quantityDecr(id, quantity)}}><MdOutlineDoDisturbOn /></div>
+                                        <span>{quantity}</span>
+                                    <div className='quantity-but' onClick={() => {quantityIncr(id)}}><MdAddCircleOutline /></div>
+                                </div>
+                                <FaTrash className='delete-icon' key={id} onClick={() => deleteOrders(id)}/>
+                            </Col>
+                        </Col>
+                    </Row>
+                    )
+                }
+            )
         )
     }
     
+    function quantityIncr(id) {
+        setOrdersArr(ordersArr.map(order => {
+            if (order.id === id) {
+                return {
+                    ...order, quantity: order.quantity +1
+                };
+            } else {
+                return order
+            }
+        }))
+    }
+
+    function quantityDecr(id, quantity) {
+        let quan = quantity;
+        setOrdersArr(ordersArr.map(order => {
+            if ((order.id === id) && quan > 1) {
+                return {
+                    ...order, quantity: order.quantity -1
+                };
+            } else {
+                return order
+            }
+        }))
+    }
+
     const showNothing = () => {
         return (
           <div className='nothing'>
@@ -132,7 +176,7 @@ export default function Basket(props) {
     }
 
     let sum = 0
-    props.orders.forEach(el => sum += Number.parseFloat(el.price))
+    ordersArr.forEach(el => sum += el.price * el.quantity)
 
     let classNames = 'final-pages'
     if (loadClicks === true) {
@@ -149,14 +193,14 @@ export default function Basket(props) {
             <HeaderFoneBasket locale={props.locale} />
             <Container className='basket-block' fluid>
                 <div className='basket-block1'>
-                        <Row className='basket-item'>
-                            <h1>
-                                <b>{content.basket.baskettitle}</b>
-                            </h1>
-                        </Row>
-                        <Row className='basket-shop-cart'>
-                            {props.orders.length > 0 ? orders(props) : showNothing()}
-                        </Row>
+                    <Row className='basket-item'>
+                        <h1>
+                            <b>{content.basket.baskettitle}</b>
+                        </h1>
+                    </Row>
+                    <Row className='basket-shop-cart'>
+                        {props.orders.length > 0 ? orders(props) : showNothing()}
+                    </Row>
                 </div>
                 <Container className='basket-form'>
                     <div id="calculation" className='sum'>

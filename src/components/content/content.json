@@ -113,8 +113,8 @@
             "descText9": "",
             "descText10": "",
             "category": "Led лампи",
-            "price": "415.00",
-            "count": "1"
+            "price": 415.00,
+            "quantity": 1
           },
           {
             "id": 2,
@@ -138,8 +138,8 @@
             "descText9": "- вентиляцією ( можна підключити вентилятори до 1кВт )",
             "descText10": "- обігрівом ( можна підключити обігрівач до 1кВт )",
             "category": "Девайси",
-            "price": "100.00",
-            "count": "1"
+            "price": 100.00,
+            "quantity": 1
           },
           {
             "id": 3,
@@ -163,8 +163,8 @@
             "descText9": "",
             "descText10": "",
             "category": "Led лампи",
-            "price": "220.00",
-            "count": 1
+            "price": 220.00,
+            "quantity": 1
           }
         ]
       },
@@ -306,8 +306,8 @@
           "descText9": "",
           "descText10": "",
           "category": "Led lamps",
-          "price": "415.00",
-          "count": "1"
+          "price": 415.00,
+          "quantity": 1
         },
         {
           "id": 2,
@@ -331,8 +331,8 @@
           "descText9": "- ventilation (fans up to 1 kW can be connected)",
           "descText10": "- heating ( you can connect a heater up to 1 kW)",
           "category": "Devices",
-          "price": "100.00",
-          "count": "1"
+          "price": 100.00,
+          "quantity": 1
         },
         {
           "id": 3,
@@ -356,8 +356,8 @@
           "descText9": "",
           "descText10": "",
           "category": "Led lamps",
-          "price": "220.00",
-          "count": 1
+          "price": 220.00,
+          "quantity": 1
         }
       ]
     },

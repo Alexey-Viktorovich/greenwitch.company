@@ -19,7 +19,6 @@ export default class App extends Component {
         this.state = {
             orders: [],
             zakaz: [],
-            
             showItem: false,
             fullItem: {},
             orderNumb: 0,
@@ -34,41 +33,6 @@ export default class App extends Component {
         this.deleteAllOrder = this.deleteAllOrder.bind(this)
         this.addZakaz = this.addZakaz.bind(this)
         this.onLocale = this.onLocale.bind(this)
-    }
-
-    // componentDidMount() {
-    //     {locale ? this.setState({content: data.localeUA}) : this.setState({content: data.localeENG})}
-    //     let locale = this.state.localeUA
-    //     if (locale === !true) {
-    //         this.setState({content: data.localeENG})
-    //     }
-    // }
-
-    // componentDidUpdate() {
-    //     let locale = this.state.localeUA
-    //     if (locale === true) {
-    //         this.setState({content: data.localeUA})
-    //     } else if (locale === !true) {
-    //         this.setState({content: data.localeENG})
-    //     }
-    // }
-
-    render() {  
-        return (
-            <div className='app'>
-                <Router basename="/greenwitch.company/">
-                    <NavbarMenu orders={this.state.orders} count={this.state.orderNumb} locale={this.state.localeUA} onLocale={this.onLocale} onDelete={this.deleteOrder} />
-                        <Routes>
-                            <Route path="/" element={<HomePage locale={this.state.localeUA} />} />
-                            <Route path="/about-us" element={<About locale={this.state.localeUA} />} />
-                            <Route path="/catalog" element={<Catalog onShowItem={this.onShowItem} orders={this.state.orders} locale={this.state.localeUA} onAdd={this.addToOrder}/>} />
-                            <Route path="/basket" element={<Basket orders={this.state.orders} locale={this.state.localeUA} onAddZakaz={this.addZakaz} onDelete={this.deleteOrder} onAllDelete={this.deleteAllOrder} />} />
-                        </Routes>
-                        {this.state.showItem && <ShowItem onShowItem={this.onShowItem} onAdd={this.addToOrder} item={this.state.fullItem} locale={this.state.localeUA}/>}
-                    <Footer />
-                </Router>
-            </div>
-        )
     }
 
     onLocale() {
@@ -92,22 +56,17 @@ export default class App extends Component {
 
     addToOrder(item) {
         let isInArray = false
+        const { img, title, price, id, quantity } = item;
+        const orderData = {id, title, img, price, quantity}
         this.state.orders.forEach(el => {
             if(el.id === item.id)
                 isInArray = true;
-            this.onDuble();
         })
         if (!isInArray)
-            this.setState({orders: [...this.state.orders, item]})
+            this.setState({orders: [...this.state.orders, orderData]})
         if (isInArray === false) {
             this.setState({orderNumb: this.state.orderNumb +1})
         }
-    }
-
-    onDuble() {
-        this.setState((state) => {
-            return (state.orders.count = state.orders.count +1)
-        })
     }
 
     addZakaz(ordersArr, lastName, email, mobile, sum) {
@@ -125,5 +84,23 @@ export default class App extends Component {
                 zakaz: newZakaz
             }
         })
+    }
+
+    render() {  
+        return (
+            <div className='app'>
+                <Router basename="/greenwitch.company/">
+                    <NavbarMenu orders={this.state.orders} count={this.state.orderNumb} locale={this.state.localeUA} onLocale={this.onLocale} onDelete={this.deleteOrder} />
+                        <Routes>
+                            <Route path="/" element={<HomePage locale={this.state.localeUA} />} />
+                            <Route path="/about-us" element={<About locale={this.state.localeUA} />} />
+                            <Route path="/catalog" element={<Catalog onShowItem={this.onShowItem} orders={this.state.orders} locale={this.state.localeUA} onAdd={this.addToOrder}/>} />
+                            <Route path="/basket" element={<Basket orders={this.state.orders} locale={this.state.localeUA} onAddZakaz={this.addZakaz} onDelete={this.deleteOrder} onAllDelete={this.deleteAllOrder} />} />
+                        </Routes>
+                        {this.state.showItem && <ShowItem onShowItem={this.onShowItem} onAdd={this.addToOrder} item={this.state.fullItem} locale={this.state.localeUA}/>}
+                    <Footer />
+                </Router>
+            </div>
+        )
     }
 }
