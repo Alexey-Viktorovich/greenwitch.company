@@ -13,6 +13,7 @@ export default function About(props) {
 
     useEffect(() => {
         {locale ? setContent(content = data.localeUA) : setContent(content = data.localeENG)}
+        // {window.scroll(0, 0)}
     })
 
     return(

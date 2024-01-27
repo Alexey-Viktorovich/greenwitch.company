@@ -141,7 +141,7 @@ export default function NavbarMenu(props) {
           </Nav>
           <Nav className='nav-classic'>
             <NavLink to="/" className='nav-tab'>
-                <Nav style={button} >{content.navbar.navgolovna}</Nav>
+                <Nav style={button}>{content.navbar.navgolovna}</Nav>
             </NavLink>
             <NavLink to="/about-us" className='nav-tab'>
                 <Nav style={button}>{content.navbar.navinfo}</Nav>

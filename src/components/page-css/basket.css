@@ -7,7 +7,8 @@
 .basket-block {
     display: flex;
     justify-content: space-between;
-    max-width: 93%;
+    max-width: 85%;
+    min-height: 400px;
     position: relative;
     z-index: 100;
     background-color: #fff;
@@ -79,6 +80,26 @@
 .basket-shop-cart .basket-order-item p {
     color: #797979;
     font-weight: 600;
+}
+
+.last-div-orders {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity {
+    display: flex;
+    margin: 0 0 -5px -5px;
+}
+
+.quantity-but {
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+.quantity-but svg {
+    width: 18px;
+    height: 18px;
 }
 
 .basket-shop-cart .basket-order-item .delete-icon {
@@ -209,6 +230,13 @@
     border-color: #00cc9c;
 }
 
+
+@media screen and (max-width: 1024px) {
+    .basket-block {
+        max-width: 95%;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .basket-block {
         flex-direction: row;
@@ -252,6 +280,7 @@
 @media screen and (max-width: 500px) {
     .basket-block {
         padding: 20px;
+        max-width: 95%;
     }
 
     .basket-form {
