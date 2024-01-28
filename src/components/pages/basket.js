@@ -57,18 +57,19 @@ export default function Basket(props) {
                     return (
                     <Row key={id}>
                         <Col className='basket-order-item'>
-                            <Col><img src={"./img/" + img + ".png"} alt='' /></Col>
-                            <Col>{title}</Col>
-                            <Col>{sum} $</Col>
-                            <Col className='last-div-orders'>
+                            <Col className='imgcol'><img src={"./img/" + img + ".png"} alt='' /></Col>
+                            <Col>{title.slice(0, 50)}</Col>
+                            <FaTrash className='delete-icon' key={id} onClick={() => deleteOrders(id)}/>
+                        </Col>
+                        <Col className='footer-div-orders'>
                                 <div className='quantity'>
                                     <div className='quantity-but' onClick={() => {quantityDecr(id, quantity)}}><MdOutlineDoDisturbOn /></div>
-                                        <span>{quantity}</span>
+                                        <span className='span-quan'>{quantity}</span>
                                     <div className='quantity-but' onClick={() => {quantityIncr(id)}}><MdAddCircleOutline /></div>
                                 </div>
-                                <FaTrash className='delete-icon' key={id} onClick={() => deleteOrders(id)}/>
-                            </Col>
+                                <div><b>{sum} $</b></div>
                         </Col>
+                        
                     </Row>
                     )
                 }
