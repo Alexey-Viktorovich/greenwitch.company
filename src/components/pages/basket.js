@@ -51,7 +51,7 @@ export default function Basket(props) {
 
     const orders = () => {
         return (
-            {ordersArr.map(el => {
+            ordersArr.map(el => {
                 const { img, title, price, id, quantity } = el;
                 const sum = price * quantity
                     return (
@@ -69,11 +69,9 @@ export default function Basket(props) {
                                 </div>
                                 <div><b>{sum} $</b></div>
                         </Col>
-                        
                     </Row>
-                    )
-                })   
-            } 
+                )
+            })
         )
     }
     
