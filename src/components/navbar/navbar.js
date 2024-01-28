@@ -30,9 +30,11 @@ export default function NavbarMenu(props) {
 
     return (
       <>
-        {props.orders.map(el => (
-          <Order onDelete={props.onDelete} key={el.id} item={el}/>
-        ))}
+        <div className='nav-orders-show'>
+          {props.orders.map(el => (
+            <Order onDelete={props.onDelete} key={el.id} item={el}/>
+          ))}
+        </div>
         <div className='sum'>
           <b>{content.navbar.sum} {new Intl.NumberFormat().format(sum)} $</b>
           <NavLink to="/basket">
